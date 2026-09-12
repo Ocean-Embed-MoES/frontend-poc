@@ -1,0 +1,13 @@
+[mcp_servers.motion]
+type = "http"
+url = "https://mcp.motion.dev"
+
+[mcp_servers.motion-plus]
+type = "http"
+url = "https://mcp.motion.dev/plus"
+
+
+[mcp_servers.21st]
+url = "https://21st.dev/api/mcp"
+bearer_token_env_var = "21st_sk_76b44bd0c3413b988f1d81b427abf5b538c073537ea59e5a14dd90cfab2ff0b8"
+

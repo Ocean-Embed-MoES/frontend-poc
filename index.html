@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="description" content="OceanEmbed connects satellite observations to the ocean beneath. Explore daily temperature reconstruction across 15 depths of the North Indian Ocean." />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <title>OceanEmbed — Beneath the surface</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <a class="wordmark" href="#home" aria-label="OceanEmbed home"><span class="brand-symbol" aria-hidden="true"><span></span><span></span><span></span></span>OceanEmbed<span class="brand-period">.</span></a>
+      <nav aria-label="Main navigation">
+        <a href="#explore">The ocean</a>
+        <a href="#architecture">The science</a>
+      </nav>
+      <a class="header-link" href="#explore">Explore the depths <i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
+    </header>
+
+    <main id="main">
+      <section class="hero" id="home" aria-labelledby="hero-title">
+        <div class="hero-art" role="img" aria-label="A slowly rotating, sunlit Earth, seen from orbit above the Indian Ocean">
+          <canvas id="earth-canvas" aria-hidden="true"></canvas>
+          <img class="earth-fallback" src="/assets/earth-poster.png" alt="" />
+        </div>
+        <div class="hero-copy">
+          <h1 id="hero-title"><span class="text-line">Beneath</span><span class="text-line">the surface.</span></h1>
+          <p>Ocean temperature, reconstructed.<br />From satellite observations to the depths below.</p>
+          <a class="button button-light" href="#explore">Discover the ocean <i class="ph ph-arrow-down-right" aria-hidden="true"></i></a>
+        </div>
+        <div class="hero-bottom">
+          <p>Satellite observations.<br /><span>A new perspective on our ocean.</span></p>
+          <button class="motion-control" aria-label="Pause ambient animation" aria-pressed="false"><i class="ph ph-pause" aria-hidden="true"></i><span>Pause motion</span></button>
+        </div>
+      </section>
+
+      <section class="explore section-shell" id="explore" aria-labelledby="explore-title">
+        <div class="section-heading reveal">
+          <h2 id="explore-title">A deeper view.<br /><span class="muted-title">A clearer picture.</span></h2>
+          <p>Travel from the surface to 1,000 metres below.<br class="desktop-break" /> Explore the thermal structure of the North Indian Ocean.</p>
+          <button class="button button-light" data-open="explorer">Explore the dashboard <i class="ph ph-arrow-up-right" aria-hidden="true"></i></button>
+        </div>
+        <figure class="depth-study">
+          <div class="depth-art" role="img" aria-label="An illustrative three-dimensional study of ocean layers, with the selected depth highlighted">
+            <canvas id="depth-canvas" aria-hidden="true"></canvas>
+            <div class="depth-fallback" aria-hidden="true"></div>
+          </div>
+          <div class="depth-readout"><output id="depth-output" for="depth-slider">100</output><span>metres below the surface</span></div>
+          <div class="depth-control">
+            <label for="depth-slider">Change your perspective</label>
+            <input id="depth-slider" type="range" min="0" max="14" value="7" step="1" aria-valuetext="100 metres below the surface" />
+            <div class="range-labels"><span>Surface</span><span>1,000 m</span></div>
+          </div>
+          <figcaption>15 depth levels <span aria-hidden="true">/</span> Illustrative ocean study</figcaption>
+        </figure>
+        <div class="section-baseline"><span>Bay of Bengal & Arabian Sea</span><span>Daily. At 0.25° resolution.</span></div>
+      </section>
+
+      <section class="architecture section-shell" id="architecture" aria-labelledby="architecture-title">
+        <div class="architecture-copy reveal">
+          <h2 id="architecture-title">Surface in.<br /><span class="muted-title">Depth out.</span></h2>
+          <div class="architecture-description"><p>From satellite signals to subsurface understanding.<br class="desktop-break" /> One connected learning framework.</p>
+          <button class="button button-outline" data-open="architecture">Inside the architecture <i class="ph ph-arrow-up-right" aria-hidden="true"></i></button></div>
+        </div>
+        <div class="architecture-visual" aria-label="Surface observations flow through an embedding engine to reconstruct 15 ocean depth levels">
+          <svg class="network-lines" viewBox="0 0 1200 340" preserveAspectRatio="none" aria-hidden="true">
+            <defs><linearGradient id="line-gradient"><stop stop-color="#fff" stop-opacity=".1"/><stop offset=".5" stop-color="#fff" stop-opacity=".55"/><stop offset="1" stop-color="#fff" stop-opacity=".12"/></linearGradient></defs>
+            <g fill="none" stroke="url(#line-gradient)" stroke-width="1">
+              <path d="M 175 85 C 375 85 390 170 595 170 S 815 55 1035 55"/><path d="M 175 127 C 375 127 390 170 595 170 S 815 93 1035 93"/><path d="M 175 170 L 1035 170"/><path d="M 175 212 C 375 212 390 170 595 170 S 815 247 1035 247"/><path d="M 175 255 C 375 255 390 170 595 170 S 815 285 1035 285"/>
+            </g>
+            <g class="signal-pulses" fill="none" stroke="#fff" stroke-width="1.4" stroke-dasharray="24 1500"><path d="M 175 85 C 375 85 390 170 595 170 S 815 55 1035 55"/><path d="M 175 170 L 1035 170"/><path d="M 175 255 C 375 255 390 170 595 170 S 815 285 1035 285"/></g>
+          </svg>
+          <div class="architecture-stage stage-input">
+            <div class="input-planes" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
+            <h3>Observe</h3><p>12 surface features</p>
+          </div>
+          <div class="architecture-stage stage-embedding">
+            <div class="embedding-core" aria-hidden="true"><div class="core-face"></div><div class="core-face"></div><div class="core-face"></div><div class="core-face"></div></div>
+            <h3>Understand</h3><p>Satellite embeddings</p>
+          </div>
+          <div class="architecture-stage stage-output">
+            <div class="output-planes" aria-hidden="true"></div>
+            <h3>Reconstruct</h3><p>15 depths. One ocean.</p>
+          </div>
+        </div>
+        <footer class="site-footer"><a class="wordmark footer-wordmark" href="#home">OceanEmbed<span class="brand-period">.</span></a><p>A deeper understanding starts at the surface.</p><a class="back-top" href="#home">Back to the surface <i class="ph ph-arrow-up" aria-hidden="true"></i></a></footer>
+      </section>
+    </main>
+
+    <dialog id="detail-dialog" aria-labelledby="dialog-title" data-lenis-prevent>
+      <div class="dialog-toolbar"><a class="wordmark" href="#home">OceanEmbed.</a><button class="icon-button close-dialog" aria-label="Close preview"><i class="ph ph-x" aria-hidden="true"></i></button></div>
+      <div class="dialog-content" id="dialog-content"></div>
+    </dialog>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

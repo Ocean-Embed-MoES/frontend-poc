@@ -1,0 +1,23 @@
+{
+  "mcpServers": {
+    "playwright": {
+      "command": "npx",
+      "args": [
+        "@playwright/mcp@latest"
+      ]
+    },
+
+    "21st": {
+      "url": "https://21st.dev/api/mcp",
+      "headers": {
+        "x-api-key": "21st_sk_76b44bd0c3413b988f1d81b427abf5b538c073537ea59e5a14dd90cfab2ff0b8"
+      }
+    },
+    
+    "vividsites": {
+      "command": "npx",
+      "args": ["-y", "uiprompts-mcp"],
+      "env": { "UIPROMPTS_API_KEY": "43de74bb-d77b-4561-8e13-9c7ced68d54b" }
+    }
+  }
+}
