@@ -1,0 +1,96 @@
+.ph-arrow-down-right::before {
+  content: "\e042";
+}
+.ph-arrow-up::before {
+  content: "\e08e";
+}
+.ph-arrow-up-right::before {
+  content: "\e092";
+}
+.ph-pause::before {
+  content: "\e39e";
+}
+.ph-play::before {
+  content: "\e3d0";
+}
+.ph-x::before {
+  content: "\e4f6";
+}
+.ph-globe-hemisphere-east::before {
+  content: "\e28a";
+}
+.ph-stack::before {
+  content: "\e466";
+}
+.ph-thermometer::before {
+  content: "\e5c6";
+}
+.ph-drop::before {
+  content: "\e210";
+}
+.ph-waves::before {
+  content: "\e6de";
+}
+.ph-wind::before {
+  content: "\e5d2";
+}
+.ph-caret-left::before {
+  content: "\e138";
+}
+.ph-caret-right::before {
+  content: "\e13a";
+}
+.ph-plus::before {
+  content: "\e3d4";
+}
+.ph-minus::before {
+  content: "\e32a";
+}
+.ph-corners-out::before {
+  content: "\e1d0";
+}
+.ph-download-simple::before {
+  content: "\e20c";
+}
+.ph-info::before {
+  content: "\e2ce";
+}
+.ph-crosshair::before {
+  content: "\e1d6";
+}
+.ph-bookmark-simple::before {
+  content: "\e0ea";
+}
+.ph-grid-four::before {
+  content: "\e296";
+}
+.ph-sliders-horizontal::before {
+  content: "\e434";
+}
+.ph-arrow-square-out::before {
+  content: "\e5de";
+}
+.ph-house::before {
+  content: "\e2c2";
+}
+.ph-cube::before {
+  content: "\e1da";
+}
+.ph-chart-line::before {
+  content: "\e154";
+}
+.ph-check::before {
+  content: "\e182";
+}
+.ph-arrow-left::before {
+  content: "\e058";
+}
+.ph-magnifying-glass::before {
+  content: "\e30c";
+}
+.ph-trash::before {
+  content: "\e4a6";
+}
+.ph-question::before {
+  content: "\e3e8";
+}

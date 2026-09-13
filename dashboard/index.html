@@ -1,0 +1,511 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Explore OceanEmbed's interactive ocean workspace. Inspect demonstration temperature grids, depth profiles, and ocean cross-sections."
+    />
+    <link rel="icon" href="/favicon.svg" />
+    <title>Ocean explorer | OceanEmbed</title>
+  </head>
+  <body class="dashboard-body">
+    <a class="skip-link" href="#ocean-map">Skip to ocean map</a>
+    <div class="dashboard-app">
+      <aside class="sidebar" aria-label="Workspace sidebar">
+        <a class="wordmark dashboard-brand" href="/"
+          ><span class="brand-symbol" aria-hidden="true"
+            ><span></span><span></span><span></span></span
+          >OceanEmbed<span class="brand-period">.</span></a
+        >
+        <nav class="workspace-nav" aria-label="Workspace">
+          <a href="/dashboard/" aria-current="page"
+            ><i class="ph ph-globe-hemisphere-east" aria-hidden="true"></i>Ocean
+            explorer</a
+          ><a href="/architecture/"
+            ><i class="ph ph-cube" aria-hidden="true"></i>The architecture<i
+              class="ph ph-arrow-up-right nav-arrow"
+              aria-hidden="true"
+            ></i
+          ></a>
+        </nav>
+        <div class="sidebar-section">
+          <h2>Data layers</h2>
+          <fieldset class="layer-list">
+            <legend class="sr-only">Active ocean variable</legend>
+            <label class="layer-option"
+              ><input type="radio" name="layer" value="temperature" checked /><i
+                class="ph ph-thermometer"
+                aria-hidden="true"
+              ></i
+              ><span>Temperature<small>Subsurface reconstruction</small></span
+              ><span class="radio-indicator"></span
+            ></label>
+            <label class="layer-option"
+              ><input type="radio" name="layer" value="salinity" /><i
+                class="ph ph-drop"
+                aria-hidden="true"
+              ></i
+              ><span>Salinity<small>Surface salinity</small></span
+              ><span class="radio-indicator"></span
+            ></label>
+            <label class="layer-option"
+              ><input type="radio" name="layer" value="ssh" /><i
+                class="ph ph-waves"
+                aria-hidden="true"
+              ></i
+              ><span>Sea level<small>Sea surface height</small></span
+              ><span class="radio-indicator"></span
+            ></label>
+            <label class="layer-option"
+              ><input type="radio" name="layer" value="wind" /><i
+                class="ph ph-wind"
+                aria-hidden="true"
+              ></i
+              ><span>Wind stress curl<small>Surface forcing</small></span
+              ><span class="radio-indicator"></span
+            ></label>
+          </fieldset>
+        </div>
+        <div class="sidebar-section overlays">
+          <h2>Map overlays</h2>
+          <label
+            ><span
+              ><i class="ph ph-grid-four" aria-hidden="true"></i>Grid
+              cells</span
+            ><input
+              type="checkbox"
+              id="show-grid"
+              role="switch"
+              aria-label="Show grid cells"
+              checked /></label
+          ><label
+            ><span
+              ><i class="ph ph-wind" aria-hidden="true"></i>Surface
+              currents</span
+            ><input
+              type="checkbox"
+              id="show-currents"
+              role="switch"
+              aria-label="Show surface currents" /></label
+          ><label
+            ><span
+              ><i class="ph ph-crosshair" aria-hidden="true"></i>Sample
+              stations</span
+            ><input
+              type="checkbox"
+              id="show-stations"
+              role="switch"
+              aria-label="Show sample stations"
+              checked
+          /></label>
+        </div>
+        <div class="sidebar-section saved-section">
+          <div class="section-title-row">
+            <h2>Saved locations</h2>
+            <span id="saved-count">0</span>
+          </div>
+          <div id="saved-locations">
+            <p class="sidebar-empty">
+              Save a point on the map<br />to return to it here.
+            </p>
+          </div>
+        </div>
+        <div class="sidebar-bottom">
+          <div class="dataset-mark">
+            <span class="dataset-icon"
+              ><i class="ph ph-stack" aria-hidden="true"></i
+            ></span>
+            <div>Demonstration dataset<span>Synthetic fields · 2023</span></div>
+            <button
+              class="bare-icon"
+              id="dataset-info"
+              aria-label="About the demonstration data"
+              title="About this dataset"
+            >
+              <i class="ph ph-info" aria-hidden="true"></i>
+            </button>
+          </div>
+          <a href="/" class="return-home"
+            ><i class="ph ph-arrow-left" aria-hidden="true"></i>Back to the
+            surface</a
+          >
+        </div>
+      </aside>
+
+      <main class="dashboard-main">
+        <header class="dashboard-header">
+          <div>
+            <div class="workspace-breadcrumb">
+              Workspace <span>/</span> North Indian Ocean
+            </div>
+            <h1>Ocean explorer<span class="demo-badge">Demo</span></h1>
+          </div>
+          <div class="header-actions">
+            <button class="subtle-button" id="help-button">
+              <i class="ph ph-question" aria-hidden="true"></i>Quick guide</button
+            ><button class="export-button" id="export-data">
+              <i class="ph ph-download-simple" aria-hidden="true"></i>Export
+              profile
+            </button>
+          </div>
+        </header>
+        <div class="workspace-toolbar">
+          <div class="view-tabs" role="tablist" aria-label="Visualization">
+            <button
+              role="tab"
+              aria-selected="true"
+              aria-controls="map-panel"
+              id="map-tab"
+              data-view="map"
+            >
+              <i class="ph ph-globe-hemisphere-east" aria-hidden="true"></i
+              >Ocean map</button
+            ><button
+              role="tab"
+              aria-selected="false"
+              aria-controls="map-panel"
+              id="section-tab"
+              data-view="section"
+              tabindex="-1"
+            >
+              <i class="ph ph-stack" aria-hidden="true"></i>Depth section
+            </button>
+          </div>
+          <div class="toolbar-filters">
+            <label class="region-select"
+              ><span class="sr-only">Map region</span
+              ><select id="region-select">
+                <option value="nio">North Indian Ocean</option>
+                <option value="bengal">Bay of Bengal</option>
+                <option value="arabian">Arabian Sea</option>
+              </select></label
+            >
+            <div class="date-control">
+              <button
+                class="bare-icon"
+                id="previous-day"
+                aria-label="Previous day"
+                title="Previous day"
+              >
+                <i class="ph ph-caret-left" aria-hidden="true"></i></button
+              ><label
+                ><span class="sr-only">Observation date</span
+                ><input
+                  id="observation-date"
+                  type="date"
+                  min="2023-01-01"
+                  max="2023-12-31"
+                  value="2023-06-15" /></label
+              ><button
+                class="bare-icon"
+                id="next-day"
+                aria-label="Next day"
+                title="Next day"
+              >
+                <i class="ph ph-caret-right" aria-hidden="true"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="workspace-body">
+          <div class="ocean-workspace">
+            <div
+              class="map-panel"
+              id="map-panel"
+              role="tabpanel"
+              aria-labelledby="map-tab"
+            >
+              <div class="map-header">
+                <div>
+                  <span id="active-layer-label">Temperature</span
+                  ><span class="map-unit" id="map-depth-label"
+                    >100 m below surface</span
+                  >
+                </div>
+                <span class="map-resolution">0.25° grid</span>
+              </div>
+              <canvas
+                id="ocean-map"
+                tabindex="0"
+                aria-label="Interactive North Indian Ocean map. Click an ocean cell to inspect it. Drag to pan, use plus and minus to zoom, or use the coordinate form below."
+              ></canvas>
+              <div class="map-loading" id="map-loading">
+                Preparing ocean grids<span></span>
+              </div>
+              <div class="map-tooltip" id="map-tooltip" hidden></div>
+              <div class="map-controls">
+                <button
+                  class="map-icon"
+                  id="zoom-in"
+                  aria-label="Zoom in"
+                  title="Zoom in"
+                >
+                  <i class="ph ph-plus" aria-hidden="true"></i></button
+                ><button
+                  class="map-icon"
+                  id="zoom-out"
+                  aria-label="Zoom out"
+                  title="Zoom out"
+                >
+                  <i class="ph ph-minus" aria-hidden="true"></i></button
+                ><span></span
+                ><button
+                  class="map-icon"
+                  id="reset-map"
+                  aria-label="Reset map view"
+                  title="Reset view"
+                >
+                  <i class="ph ph-corners-out" aria-hidden="true"></i>
+                </button>
+              </div>
+              <div class="map-legend">
+                <div>
+                  <span id="legend-title">Temperature</span
+                  ><span id="legend-unit">°C</span>
+                </div>
+                <div class="legend-gradient" id="legend-gradient"></div>
+                <div class="legend-ticks" id="legend-ticks"></div>
+              </div>
+              <div class="map-attribution">
+                Natural Earth <span>·</span> Illustrative ocean fields
+              </div>
+              <div class="map-coordinates" id="hover-coordinates">
+                Click a grid cell to explore
+              </div>
+            </div>
+
+            <div class="depth-strip">
+              <div class="depth-strip-heading">
+                <span
+                  ><i class="ph ph-stack" aria-hidden="true"></i>Ocean
+                  depth</span
+                ><output id="dashboard-depth-output" for="dashboard-depth"
+                  >100 <span>m</span></output
+                ><span class="depth-mode-note" id="depth-mode-note"
+                  >15 standard levels</span
+                >
+              </div>
+              <input
+                id="dashboard-depth"
+                type="range"
+                min="0"
+                max="14"
+                value="7"
+                step="1"
+                aria-label="Ocean depth"
+                aria-valuetext="100 metres"
+              />
+              <div class="depth-ticks">
+                <button data-depth="0">Surface</button
+                ><button data-depth="5">50 m</button
+                ><button data-depth="7" class="selected">100 m</button
+                ><button data-depth="10">200 m</button
+                ><button data-depth="12">500 m</button
+                ><button data-depth="14">1,000 m</button>
+              </div>
+            </div>
+
+            <section
+              class="observations-panel"
+              aria-labelledby="observations-title"
+            >
+              <div class="observations-heading">
+                <h2 id="observations-title">Regional overview</h2>
+                <span id="overview-date">15 Jun 2023</span
+                ><button
+                  class="bare-icon"
+                  id="play-dates"
+                  aria-label="Play daily sequence"
+                  title="Play daily sequence"
+                >
+                  <i class="ph ph-play" aria-hidden="true"></i>
+                </button>
+              </div>
+              <div class="region-cards">
+                <button class="region-summary" data-preset="bengal">
+                  <span
+                    >Bay of Bengal<i
+                      class="ph ph-arrow-up-right"
+                      aria-hidden="true"
+                    ></i></span
+                  ><strong id="bengal-value">—</strong
+                  ><small>15° N, 88° E</small
+                  ><svg
+                    id="bengal-sparkline"
+                    aria-label="Illustrative seven-day temperature trend"
+                    role="img"
+                  ></svg></button
+                ><button class="region-summary" data-preset="arabian">
+                  <span
+                    >Arabian Sea<i
+                      class="ph ph-arrow-up-right"
+                      aria-hidden="true"
+                    ></i></span
+                  ><strong id="arabian-value">—</strong
+                  ><small>15° N, 65° E</small
+                  ><svg
+                    id="arabian-sparkline"
+                    aria-label="Illustrative seven-day temperature trend"
+                    role="img"
+                  ></svg>
+                </button>
+              </div>
+            </section>
+          </div>
+
+          <aside class="location-inspector" aria-labelledby="location-title">
+            <div class="inspector-heading">
+              <h2 id="location-title">Selected location</h2>
+              <button
+                class="bare-icon"
+                id="save-location"
+                aria-label="Save selected location"
+                title="Save location"
+                aria-pressed="false"
+              >
+                <i class="ph ph-bookmark-simple" aria-hidden="true"></i>
+              </button>
+            </div>
+            <div class="location-identity">
+              <p id="selected-region">Bay of Bengal</p>
+              <h3 id="selected-coordinates">15.00° N, 88.00° E</h3>
+              <span id="selected-grid-id">Grid cell 40 : 172</span>
+            </div>
+            <div class="selected-value">
+              <span id="selected-value-label">Temperature at 100 m</span
+              ><strong id="selected-value">—</strong
+              ><span
+                class="selected-value-description"
+                id="selected-value-description"
+                >Illustrative reconstruction</span
+              >
+            </div>
+            <div class="profile-section">
+              <div
+                class="inspector-tabs"
+                role="tablist"
+                aria-label="Location chart"
+              >
+                <button
+                  role="tab"
+                  id="profile-tab"
+                  aria-selected="true"
+                  aria-controls="inspector-chart"
+                  data-chart="profile"
+                >
+                  Depth profile</button
+                ><button
+                  role="tab"
+                  id="history-tab"
+                  aria-selected="false"
+                  aria-controls="inspector-chart"
+                  data-chart="history"
+                  tabindex="-1"
+                >
+                  7-day history
+                </button>
+              </div>
+              <div class="profile-legend">
+                <span><b></b>Reconstruction</span
+                ><span><b class="dashed"></b>Reference</span>
+              </div>
+              <svg
+                id="inspector-chart"
+                role="tabpanel"
+                aria-labelledby="profile-tab"
+                viewBox="0 0 280 275"
+              ></svg>
+              <p class="chart-context" id="chart-context">
+                Dashed line: illustrative reference profile.
+              </p>
+            </div>
+            <div class="surface-conditions">
+              <h3>Surface conditions</h3>
+              <dl>
+                <div>
+                  <dt>Temperature</dt>
+                  <dd id="surface-temperature">—</dd>
+                </div>
+                <div>
+                  <dt>Salinity</dt>
+                  <dd id="surface-salinity">—</dd>
+                </div>
+                <div>
+                  <dt>Sea level</dt>
+                  <dd id="surface-ssh">—</dd>
+                </div>
+                <div>
+                  <dt>Current speed</dt>
+                  <dd id="surface-current">—</dd>
+                </div>
+              </dl>
+            </div>
+            <form class="coordinate-form" id="coordinate-form" novalidate>
+              <h3>Go to coordinates</h3>
+              <div>
+                <label
+                  >Latitude<input
+                    id="coordinate-lat"
+                    type="number"
+                    min="5"
+                    max="29.75"
+                    step="0.25"
+                    value="15"
+                    required
+                    aria-describedby="coordinate-error" /></label
+                ><label
+                  >Longitude<input
+                    id="coordinate-lon"
+                    type="number"
+                    min="45"
+                    max="104.75"
+                    step="0.25"
+                    value="88"
+                    required
+                    aria-describedby="coordinate-error" /></label
+                ><button
+                  class="coordinate-go"
+                  type="submit"
+                  aria-label="Locate coordinates"
+                  title="Locate coordinates"
+                >
+                  <i class="ph ph-crosshair" aria-hidden="true"></i>
+                </button>
+              </div>
+              <p id="coordinate-error" aria-live="polite"></p>
+            </form>
+          </aside>
+        </div>
+        <footer class="dashboard-status">
+          <span><span class="status-indicator"></span>Demonstration mode</span
+          ><span>North Indian Ocean <b>5°–30° N · 45°–105° E</b></span
+          ><span id="grid-count">Preparing grids</span>
+        </footer>
+      </main>
+    </div>
+    <div
+      class="dashboard-toast"
+      role="status"
+      aria-live="polite"
+      id="dashboard-toast"
+    ></div>
+    <dialog id="dashboard-dialog" aria-labelledby="dashboard-dialog-title">
+      <div class="dialog-toolbar">
+        <span>OceanEmbed explorer</span
+        ><button
+          class="icon-button"
+          id="close-dashboard-dialog"
+          aria-label="Close information"
+        >
+          <i class="ph ph-x" aria-hidden="true"></i>
+        </button>
+      </div>
+      <div class="dialog-content" id="dashboard-dialog-content"></div>
+    </dialog>
+    <script type="module" src="/src/dashboard/main.js"></script>
+  </body>
+</html>

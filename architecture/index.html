@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Inside OceanEmbed. Explore the satellite embedding engine, attention U-Net, and 15-depth ocean reconstruction in an interactive architecture study."
+    />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <title>Inside OceanEmbed — The architecture</title>
+  </head>
+  <body class="architecture-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="architecture-header">
+      <a class="wordmark" href="/" aria-label="OceanEmbed home"
+        ><span class="brand-symbol" aria-hidden="true"
+          ><span></span><span></span><span></span></span
+        >OceanEmbed<span class="brand-period">.</span></a
+      >
+      <nav aria-label="Main navigation">
+        <a href="/">Overview</a
+        ><a href="/architecture/" aria-current="page">Architecture</a>
+      </nav>
+      <a class="header-link" href="/dashboard/"
+        >Open the explorer
+        <i class="ph ph-arrow-up-right" aria-hidden="true"></i
+      ></a>
+    </header>
+    <main id="main">
+      <section class="assembly-hero" aria-labelledby="assembly-title">
+        <div class="assembly-copy">
+          <h1 id="assembly-title">
+            Surface in.<br /><span>Intelligence<br />within.</span>
+          </h1>
+          <p>
+            A window into the ocean we cannot see.<br class="desktop-break" />
+            Built from the signals we can.
+          </p>
+          <a class="text-action" href="#signal"
+            >Follow the architecture
+            <i class="ph ph-arrow-down-right" aria-hidden="true"></i
+          ></a>
+          <div class="assembly-note">
+            <span class="note-line"></span>
+            <p>
+              One connected framework.<br />From satellite observations to 1,000
+              metres.
+            </p>
+          </div>
+        </div>
+        <div class="assembly-study" id="assembly-study">
+          <div class="assembly-canvas-wrap">
+            <canvas
+              id="assembly-canvas"
+              tabindex="0"
+              role="img"
+              aria-label="Interactive conceptual 3D architecture. Drag or use arrow keys to rotate. Select a labeled layer to learn more."
+              aria-describedby="assembly-caption"
+            ></canvas>
+          </div>
+          <svg class="assembly-leaders" aria-hidden="true"></svg>
+          <div class="assembly-labels" aria-label="Architecture layers"></div>
+          <div class="assembly-fallback">
+            <div class="fallback-stack" aria-hidden="true"></div>
+            <p>Explore the labeled architecture below.</p>
+          </div>
+          <div class="assembly-controls" aria-label="3D view controls">
+            <div class="view-toggle" role="group" aria-label="Assembly view">
+              <button data-assembly="exploded" aria-pressed="true">
+                Exploded</button
+              ><button data-assembly="assembled" aria-pressed="false">
+                Assembled
+              </button>
+            </div>
+            <button
+              class="subtle-icon"
+              id="rotate-model"
+              aria-label="Rotate model"
+              title="Rotate model"
+            >
+              <i class="ph ph-cube" aria-hidden="true"></i>
+            </button>
+            <button
+              class="subtle-icon"
+              id="reset-model"
+              aria-label="Reset model view"
+              title="Reset view"
+            >
+              <i class="ph ph-corners-out" aria-hidden="true"></i>
+            </button>
+            <button
+              class="subtle-icon"
+              id="pause-motion"
+              aria-label="Pause ambient motion"
+              aria-pressed="false"
+              title="Pause motion"
+            >
+              <i class="ph ph-pause" aria-hidden="true"></i>
+            </button>
+          </div>
+          <p id="assembly-caption" class="assembly-caption">
+            Conceptual system view <span>Drag to rotate</span>
+          </p>
+        </div>
+        <div class="hero-bottom-rule">
+          <span>The OceanEmbed architecture</span
+          ><span
+            >North Indian Ocean <span class="muted-slash">/</span> 0–1,000
+            m</span
+          ><a href="#signal" aria-label="Continue to the signal flow"
+            ><i class="ph ph-arrow-down-right" aria-hidden="true"></i
+          ></a>
+        </div>
+      </section>
+
+      <section
+        class="signal-section architecture-shell"
+        id="signal"
+        aria-labelledby="signal-title"
+      >
+        <div class="section-intro">
+          <h2 id="signal-title">
+            Every connection.<br /><span>A deeper understanding.</span>
+          </h2>
+          <p>
+            Seven days of surface observations become one compact
+            representation. The decoder brings it back into focus, at fifteen
+            depths.
+          </p>
+        </div>
+        <div class="signal-workbench">
+          <div class="signal-toolbar">
+            <span>Attention U-Net</span
+            ><button id="signal-replay" class="text-action">
+              Trace the signal <i class="ph ph-play" aria-hidden="true"></i>
+            </button>
+          </div>
+          <div
+            class="network-scroll"
+            tabindex="0"
+            role="region"
+            aria-label="Detailed U-Net architecture diagram. Scroll horizontally on small screens."
+          >
+            <svg
+              id="network-diagram"
+              viewBox="0 0 1200 440"
+              role="img"
+              aria-labelledby="network-title network-desc"
+            >
+              <title id="network-title">OceanEmbed attention U-Net</title>
+              <desc id="network-desc">
+                84 input channels from seven days and twelve features are
+                temporally fused to twelve channels. Three encoder blocks
+                produce 64, 128, and 256 channels, leading to a 512-channel
+                embedding at 12 by 30 resolution. Three decoder blocks with skip
+                connections restore 100 by 240 resolution. The output head
+                predicts fifteen temperature depths.
+              </desc>
+            </svg>
+          </div>
+          <div class="network-legend">
+            <span><i class="legend-solid"></i> Feature flow</span
+            ><span><i class="legend-dashed"></i> Skip connection</span
+            ><span>Batch dimension omitted</span>
+          </div>
+          <div
+            class="stage-tabs"
+            role="tablist"
+            aria-label="Explore architecture stages"
+          ></div>
+          <div
+            id="stage-detail"
+            class="stage-detail"
+            role="tabpanel"
+            tabindex="0"
+          ></div>
+        </div>
+      </section>
+
+      <section
+        class="features-section architecture-shell"
+        id="features"
+        aria-labelledby="features-title"
+      >
+        <div class="features-heading">
+          <h2 id="features-title">
+            The surface tells<br /><span>more than a story.</span>
+          </h2>
+          <p>
+            Twelve features. Each chosen for the physical information it carries
+            into the ocean below.
+          </p>
+          <div class="feature-count">
+            <span id="feature-count">12</span
+            ><span>input channels<br />one fused surface state</span>
+          </div>
+          <p class="feature-processing">
+            Regrid to 0.25°
+            <i class="ph ph-caret-right" aria-hidden="true"></i> Normalize
+            <i class="ph ph-caret-right" aria-hidden="true"></i> Stack 7 days
+          </p>
+        </div>
+        <div class="feature-catalog">
+          <div
+            class="feature-filter"
+            role="group"
+            aria-label="Filter input features"
+          >
+            <button data-filter="all" aria-pressed="true">All inputs</button
+            ><button data-filter="observed" aria-pressed="false">
+              Observed</button
+            ><button data-filter="derived" aria-pressed="false">Derived</button
+            ><button data-filter="context" aria-pressed="false">Context</button>
+          </div>
+          <div id="feature-list"></div>
+          <p class="catalog-note">
+            Select a feature to see why it belongs in the model.
+          </p>
+        </div>
+      </section>
+
+      <section
+        class="validation-section architecture-shell"
+        aria-labelledby="validation-title"
+      >
+        <div class="section-intro">
+          <h2 id="validation-title">
+            Built to learn.<br /><span>Designed to be tested.</span>
+          </h2>
+          <p>
+            A reconstruction is only useful if it holds up beneath the surface.
+            Training and independent evaluation are part of the same design.
+          </p>
+        </div>
+        <div class="validation-grid">
+          <div class="learning-design">
+            <h3>Learn the structure.<br />Then the variability.</h3>
+            <div class="training-step">
+              <span>01</span>
+              <div>
+                <h4>Climatology pre-training</h4>
+                <p>
+                  Monthly GLORYS means establish seasonal stratification and the
+                  mean vertical temperature structure.
+                </p>
+              </div>
+            </div>
+            <div class="training-step">
+              <span>02</span>
+              <div>
+                <h4>Daily fine-tuning</h4>
+                <p>
+                  Seven-day rolling inputs teach the full network to resolve
+                  daily changes, eddies, and monsoon dynamics.
+                </p>
+              </div>
+            </div>
+            <div class="validation-source">
+              <i class="ph ph-check" aria-hidden="true"></i>
+              <p>
+                <strong>Independent by design.</strong><br />ARGO profiles are
+                reserved for evaluation and never enter training.
+              </p>
+            </div>
+          </div>
+          <div class="loss-study">
+            <div class="loss-heading">
+              <h3>Focus where it matters.</h3>
+              <span>Depth-weighted loss</span>
+            </div>
+            <div class="loss-chart">
+              <div class="loss-axis">
+                <span>Surface</span><span>1,000 m</span>
+              </div>
+              <div class="loss-zones">
+                <button data-zone="mixed" aria-pressed="false">
+                  <span>Mixed layer</span><span>0–30 m</span
+                  ><strong>1.0×</strong></button
+                ><button data-zone="thermocline" aria-pressed="true">
+                  <span>Thermocline</span><span>50–200 m</span
+                  ><strong>2.0×</strong></button
+                ><button data-zone="deep" aria-pressed="false">
+                  <span>Deep ocean</span><span>300–1,000 m</span
+                  ><strong>0.5×</strong>
+                </button>
+              </div>
+            </div>
+            <p id="zone-explanation">
+              The thermocline receives twice the weight: its steep temperature
+              gradients make reconstruction particularly challenging.
+            </p>
+            <div class="loss-formula">
+              <span>ℒ = Σ w<sub>z</sub> · RMSE<sub>z</sub></span
+              ><span>Ocean cells only</span>
+            </div>
+          </div>
+        </div>
+        <div class="evaluation-row">
+          <h3>Measure at every depth.</h3>
+          <p>
+            RMSE <span>/</span> Bias <span>/</span> R² <span>/</span> Pearson r
+          </p>
+          <span>Across seasons, the Bay of Bengal & Arabian Sea</span>
+        </div>
+        <p class="architecture-provenance">
+          This page presents the proposed OceanEmbed system. Diagrams illustrate
+          the architecture; they do not represent a trained model or measured
+          performance.
+        </p>
+      </section>
+
+      <section
+        class="architecture-close architecture-shell"
+        aria-labelledby="close-title"
+      >
+        <div>
+          <h2 id="close-title">
+            The architecture is the start.<br /><span
+              >The ocean is the reason.</span
+            >
+          </h2>
+          <a class="button button-light" href="/dashboard/"
+            >Explore the ocean
+            <i class="ph ph-arrow-up-right" aria-hidden="true"></i
+          ></a>
+        </div>
+        <a class="spec-link" href="/architecture-design.md" download
+          ><i class="ph ph-download-simple" aria-hidden="true"></i
+          ><span
+            >Read the full design<span
+              >Architecture specification · Markdown</span
+            ></span
+          ></a
+        >
+        <footer class="site-footer">
+          <a class="wordmark footer-wordmark" href="/">OceanEmbed.</a>
+          <p>A deeper understanding starts at the surface.</p>
+          <a class="back-top" href="#main"
+            >Back to the surface
+            <i class="ph ph-arrow-up" aria-hidden="true"></i
+          ></a>
+        </footer>
+      </section>
+    </main>
+    <script type="module" src="/src/architecture/main.js"></script>
+  </body>
+</html>

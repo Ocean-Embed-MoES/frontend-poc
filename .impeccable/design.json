@@ -1,0 +1,468 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-13T13:53:02.387866+00:00",
+  "title": "Design System: OceanEmbed",
+  "extensions": {
+    "colorMeta": {
+      "bg": {
+        "role": "neutral",
+        "displayName": "Bg",
+        "tonalRamp": [
+          "oklch(15.00% 0.00000 0.00)",
+          "oklch(26.43% 0.00000 0.00)",
+          "oklch(37.86% 0.00000 0.00)",
+          "oklch(49.29% 0.00000 0.00)",
+          "oklch(60.71% 0.00000 0.00)",
+          "oklch(72.14% 0.00000 0.00)",
+          "oklch(83.57% 0.00000 0.00)",
+          "oklch(95.00% 0.00000 0.00)"
+        ]
+      },
+      "text": {
+        "role": "primary",
+        "displayName": "Text",
+        "tonalRamp": [
+          "oklch(15.00% 0.00000 0.00)",
+          "oklch(26.43% 0.00000 0.00)",
+          "oklch(37.86% 0.00000 0.00)",
+          "oklch(49.29% 0.00000 0.00)",
+          "oklch(60.71% 0.00000 0.00)",
+          "oklch(72.14% 0.00000 0.00)",
+          "oklch(83.57% 0.00000 0.00)",
+          "oklch(95.00% 0.00000 0.00)"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Muted",
+        "tonalRamp": [
+          "oklch(15.00% 0.00585 286.24)",
+          "oklch(26.43% 0.00585 286.24)",
+          "oklch(37.86% 0.00585 286.24)",
+          "oklch(49.29% 0.00585 286.24)",
+          "oklch(60.71% 0.00585 286.24)",
+          "oklch(72.14% 0.00585 286.24)",
+          "oklch(83.57% 0.00585 286.24)",
+          "oklch(95.00% 0.00585 286.24)"
+        ]
+      },
+      "rule": {
+        "role": "neutral",
+        "displayName": "Rule",
+        "tonalRamp": [
+          "oklch(15.00% 0.00554 286.01)",
+          "oklch(26.43% 0.00554 286.01)",
+          "oklch(37.86% 0.00554 286.01)",
+          "oklch(49.29% 0.00554 286.01)",
+          "oklch(60.71% 0.00554 286.01)",
+          "oklch(72.14% 0.00554 286.01)",
+          "oklch(83.57% 0.00554 286.01)",
+          "oklch(95.00% 0.00554 286.01)"
+        ]
+      },
+      "display-secondary": {
+        "role": "neutral",
+        "displayName": "Display Secondary",
+        "tonalRamp": [
+          "oklch(15.00% 0.00594 286.22)",
+          "oklch(26.43% 0.00594 286.22)",
+          "oklch(37.86% 0.00594 286.22)",
+          "oklch(49.29% 0.00594 286.22)",
+          "oklch(60.71% 0.00594 286.22)",
+          "oklch(72.14% 0.00594 286.22)",
+          "oklch(83.57% 0.00594 286.22)",
+          "oklch(95.00% 0.00594 286.22)"
+        ]
+      },
+      "sidebar": {
+        "role": "neutral",
+        "displayName": "Sidebar",
+        "tonalRamp": [
+          "oklch(15.00% 0.00000 0.00)",
+          "oklch(26.43% 0.00000 0.00)",
+          "oklch(37.86% 0.00000 0.00)",
+          "oklch(49.29% 0.00000 0.00)",
+          "oklch(60.71% 0.00000 0.00)",
+          "oklch(72.14% 0.00000 0.00)",
+          "oklch(83.57% 0.00000 0.00)",
+          "oklch(95.00% 0.00000 0.00)"
+        ]
+      },
+      "workspace": {
+        "role": "neutral",
+        "displayName": "Workspace",
+        "tonalRamp": [
+          "oklch(15.00% 0.00000 0.00)",
+          "oklch(26.43% 0.00000 0.00)",
+          "oklch(37.86% 0.00000 0.00)",
+          "oklch(49.29% 0.00000 0.00)",
+          "oklch(60.71% 0.00000 0.00)",
+          "oklch(72.14% 0.00000 0.00)",
+          "oklch(83.57% 0.00000 0.00)",
+          "oklch(95.00% 0.00000 0.00)"
+        ]
+      },
+      "inspector": {
+        "role": "neutral",
+        "displayName": "Inspector",
+        "tonalRamp": [
+          "oklch(15.00% 0.00000 0.00)",
+          "oklch(26.43% 0.00000 0.00)",
+          "oklch(37.86% 0.00000 0.00)",
+          "oklch(49.29% 0.00000 0.00)",
+          "oklch(60.71% 0.00000 0.00)",
+          "oklch(72.14% 0.00000 0.00)",
+          "oklch(83.57% 0.00000 0.00)",
+          "oklch(95.00% 0.00000 0.00)"
+        ]
+      },
+      "control-surface": {
+        "role": "neutral",
+        "displayName": "Control Surface",
+        "tonalRamp": [
+          "oklch(15.00% 0.00000 0.00)",
+          "oklch(26.43% 0.00000 0.00)",
+          "oklch(37.86% 0.00000 0.00)",
+          "oklch(49.29% 0.00000 0.00)",
+          "oklch(60.71% 0.00000 0.00)",
+          "oklch(72.14% 0.00000 0.00)",
+          "oklch(83.57% 0.00000 0.00)",
+          "oklch(95.00% 0.00000 0.00)"
+        ]
+      },
+      "export-surface": {
+        "role": "neutral",
+        "displayName": "Export Surface",
+        "tonalRamp": [
+          "oklch(15.00% 0.00000 0.00)",
+          "oklch(26.43% 0.00000 0.00)",
+          "oklch(37.86% 0.00000 0.00)",
+          "oklch(49.29% 0.00000 0.00)",
+          "oklch(60.71% 0.00000 0.00)",
+          "oklch(72.14% 0.00000 0.00)",
+          "oklch(83.57% 0.00000 0.00)",
+          "oklch(95.00% 0.00000 0.00)"
+        ]
+      },
+      "export-text": {
+        "role": "neutral",
+        "displayName": "Export Text",
+        "tonalRamp": [
+          "oklch(15.00% 0.00000 0.00)",
+          "oklch(26.43% 0.00000 0.00)",
+          "oklch(37.86% 0.00000 0.00)",
+          "oklch(49.29% 0.00000 0.00)",
+          "oklch(60.71% 0.00000 0.00)",
+          "oklch(72.14% 0.00000 0.00)",
+          "oklch(83.57% 0.00000 0.00)",
+          "oklch(95.00% 0.00000 0.00)"
+        ]
+      },
+      "map-low": {
+        "role": "secondary",
+        "displayName": "Map Low",
+        "tonalRamp": [
+          "oklch(15.00% 0.08162 266.64)",
+          "oklch(26.43% 0.08162 266.64)",
+          "oklch(37.86% 0.08162 266.64)",
+          "oklch(49.29% 0.08162 266.64)",
+          "oklch(60.71% 0.08162 266.64)",
+          "oklch(72.14% 0.08162 266.64)",
+          "oklch(83.57% 0.08162 266.64)",
+          "oklch(95.00% 0.08162 266.64)"
+        ]
+      },
+      "map-blue": {
+        "role": "secondary",
+        "displayName": "Map Blue",
+        "tonalRamp": [
+          "oklch(15.00% 0.07966 238.53)",
+          "oklch(26.43% 0.07966 238.53)",
+          "oklch(37.86% 0.07966 238.53)",
+          "oklch(49.29% 0.07966 238.53)",
+          "oklch(60.71% 0.07966 238.53)",
+          "oklch(72.14% 0.07966 238.53)",
+          "oklch(83.57% 0.07966 238.53)",
+          "oklch(95.00% 0.07966 238.53)"
+        ]
+      },
+      "map-teal": {
+        "role": "secondary",
+        "displayName": "Map Teal",
+        "tonalRamp": [
+          "oklch(15.00% 0.07404 207.24)",
+          "oklch(26.43% 0.07404 207.24)",
+          "oklch(37.86% 0.07404 207.24)",
+          "oklch(49.29% 0.07404 207.24)",
+          "oklch(60.71% 0.07404 207.24)",
+          "oklch(72.14% 0.07404 207.24)",
+          "oklch(83.57% 0.07404 207.24)",
+          "oklch(95.00% 0.07404 207.24)"
+        ]
+      },
+      "map-green": {
+        "role": "secondary",
+        "displayName": "Map Green",
+        "tonalRamp": [
+          "oklch(15.00% 0.06173 171.43)",
+          "oklch(26.43% 0.06173 171.43)",
+          "oklch(37.86% 0.06173 171.43)",
+          "oklch(49.29% 0.06173 171.43)",
+          "oklch(60.71% 0.06173 171.43)",
+          "oklch(72.14% 0.06173 171.43)",
+          "oklch(83.57% 0.06173 171.43)",
+          "oklch(95.00% 0.06173 171.43)"
+        ]
+      },
+      "map-mid": {
+        "role": "secondary",
+        "displayName": "Map Mid",
+        "tonalRamp": [
+          "oklch(15.00% 0.06053 111.86)",
+          "oklch(26.43% 0.06053 111.86)",
+          "oklch(37.86% 0.06053 111.86)",
+          "oklch(49.29% 0.06053 111.86)",
+          "oklch(60.71% 0.06053 111.86)",
+          "oklch(72.14% 0.06053 111.86)",
+          "oklch(83.57% 0.06053 111.86)",
+          "oklch(95.00% 0.06053 111.86)"
+        ]
+      },
+      "map-sand": {
+        "role": "secondary",
+        "displayName": "Map Sand",
+        "tonalRamp": [
+          "oklch(15.00% 0.09126 78.51)",
+          "oklch(26.43% 0.09126 78.51)",
+          "oklch(37.86% 0.09126 78.51)",
+          "oklch(49.29% 0.09126 78.51)",
+          "oklch(60.71% 0.09126 78.51)",
+          "oklch(72.14% 0.09126 78.51)",
+          "oklch(83.57% 0.09126 78.51)",
+          "oklch(95.00% 0.09126 78.51)"
+        ]
+      },
+      "map-high": {
+        "role": "secondary",
+        "displayName": "Map High",
+        "tonalRamp": [
+          "oklch(15.00% 0.11154 49.15)",
+          "oklch(26.43% 0.11154 49.15)",
+          "oklch(37.86% 0.11154 49.15)",
+          "oklch(49.29% 0.11154 49.15)",
+          "oklch(60.71% 0.11154 49.15)",
+          "oklch(72.14% 0.11154 49.15)",
+          "oklch(83.57% 0.11154 49.15)",
+          "oklch(95.00% 0.11154 49.15)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Landing display",
+        "purpose": "Orbital hero headline."
+      },
+      "headline": {
+        "displayName": "Landing section headline",
+        "purpose": "Exploration and architecture section headings."
+      },
+      "workspace-title": {
+        "displayName": "Workspace title",
+        "purpose": "Compact dashboard heading."
+      }
+    },
+    "shadows": [
+      {
+        "name": "range-thumb-halo",
+        "value": "0 0 0 5px #ffffff12",
+        "purpose": "Landing depth range thumb."
+      },
+      {
+        "name": "range-thumb-hover",
+        "value": "0 0 0 8px #ffffff15",
+        "purpose": "Landing range hover feedback."
+      },
+      {
+        "name": "architecture-inset",
+        "value": "inset 0 0 45px #000",
+        "purpose": "Visual depth inside landing architecture planes."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease",
+        "value": "cubic-bezier(.22,1,.36,1)",
+        "purpose": "Shared landing interaction easing."
+      },
+      {
+        "name": "dashboard-controls",
+        "value": "180ms",
+        "purpose": "Compact control color and surface changes."
+      },
+      {
+        "name": "dashboard-entry",
+        "value": "450ms; stagger 60ms; power2.out",
+        "purpose": "Initial desktop workspace entrance, disabled for reduced motion."
+      },
+      {
+        "name": "architecture-entry",
+        "value": "1200ms; expo.out",
+        "purpose": "Architecture hero title entrance; suppressed for reduced motion."
+      },
+      {
+        "name": "architecture-stage",
+        "value": "320ms; power3.out; overwrite: true",
+        "purpose": "Stage details transition after pointer selection; keyboard changes are immediate."
+      },
+      {
+        "name": "architecture-trace",
+        "value": "240ms per path; 190ms stagger; none",
+        "purpose": "Signal-flow trace through the network; reduced motion shows completed paths."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "landing-small",
+        "value": "380px"
+      },
+      {
+        "name": "landing-mobile",
+        "value": "767px"
+      },
+      {
+        "name": "landing-compact",
+        "value": "1100px"
+      },
+      {
+        "name": "dashboard-min-width",
+        "value": "1120px"
+      },
+      {
+        "name": "dashboard-wide",
+        "value": "1600px"
+      },
+      {
+        "name": "landing-wide",
+        "value": "1700px"
+      },
+      {
+        "name": "dashboard-short-height",
+        "value": "800px"
+      },
+      {
+        "name": "architecture-compact",
+        "value": "1200px"
+      },
+      {
+        "name": "architecture-stacked",
+        "value": "900px"
+      },
+      {
+        "name": "architecture-mobile",
+        "value": "600px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Landing primary button",
+      "kind": "button",
+      "refersTo": "button-light",
+      "description": "Primary landing navigation action.",
+      "html": "<button class=\"ds-light\">Explore the ocean</button>",
+      "css": ".ds-light{font-family:'Manrope Variable',sans-serif;background:var(--text,#fff);color:var(--bg,#000);border:0;border-radius:100px;padding:19px 25px;min-height:56px;font-size:13px;font-weight:650;cursor:pointer;transition:background .3s var(--ease,cubic-bezier(.22,1,.36,1)),transform .3s;}.ds-light:hover{background:#d4d4d4;}.ds-light:focus-visible{outline:2px solid var(--text,#fff);outline-offset:3px;}.ds-light:active{transform:scale(.97);}@media(prefers-reduced-motion:reduce){[class^=\"ds-\"]{transition:none!important;transform:none!important;}}"
+    },
+    {
+      "name": "Landing outlined button",
+      "kind": "button",
+      "refersTo": "button-outline",
+      "description": "Secondary landing action.",
+      "html": "<button class=\"ds-outline\">The architecture</button>",
+      "css": ".ds-outline{font-family:'Manrope Variable',sans-serif;background:transparent;color:var(--text,#fff);border:1px solid #444;border-radius:100px;padding:19px 25px;min-height:56px;font-size:13px;font-weight:650;cursor:pointer;transition:background .3s,color .3s,transform .3s;}.ds-outline:hover{background:var(--text,#fff);color:var(--bg,#000);}.ds-outline:focus-visible{outline:2px solid var(--text,#fff);outline-offset:3px;}.ds-outline:active{transform:scale(.97);}@media(prefers-reduced-motion:reduce){[class^=\"ds-\"]{transition:none!important;transform:none!important;}}"
+    },
+    {
+      "name": "Export button",
+      "kind": "button",
+      "refersTo": "button-export",
+      "description": "Compact primary workspace action.",
+      "html": "<button class=\"ds-export\">Export profile</button>",
+      "css": ".ds-export{font-family:'Manrope Variable',sans-serif;background:#f4f4f4;color:#0a0a0a;border:1px solid #f4f4f4;border-radius:6px;padding:10px 13px;min-height:35px;font-size:11px;font-weight:600;cursor:pointer;transition:background .18s;}.ds-export:hover{background:#d7d7d7;}.ds-export:focus-visible{outline:2px solid var(--text,#fff);outline-offset:3px;}@media(prefers-reduced-motion:reduce){[class^=\"ds-\"]{transition:none!important;transform:none!important;}}"
+    },
+    {
+      "name": "Coordinate input",
+      "kind": "input",
+      "refersTo": "coordinate-input",
+      "description": "Labelled numeric field for direct map selection.",
+      "html": "<label class=\"ds-field\">Latitude<input type=\"number\" value=\"15\" min=\"5\" max=\"29.75\" step=\"0.25\" /></label>",
+      "css": ".ds-field{font-family:'Manrope Variable',sans-serif;font-size:10px;color:#aaa;display:flex;flex-direction:column;gap:6px;width:120px;}.ds-field input{font-family:'Manrope Variable',sans-serif;font-size:11px;background:#151515;color:#eee;border:1px solid #3c3c3c;border-radius:4px;padding:8px;min-height:31px;}.ds-field input:focus-visible{outline:2px solid var(--text,#fff);outline-offset:3px;}.ds-field input[aria-invalid=true]{border-color:#a26161;}@media(prefers-reduced-motion:reduce){[class^=\"ds-\"]{transition:none!important;transform:none!important;}}"
+    },
+    {
+      "name": "Workspace navigation",
+      "kind": "nav",
+      "refersTo": "workspace-nav",
+      "description": "Filled active navigation with a quiet hover state.",
+      "html": "<nav class=\"ds-nav\" aria-label=\"Workspace\"><a href=\"/dashboard/\" aria-current=\"page\">Ocean explorer</a><a href=\"/architecture/\">The architecture</a></nav>",
+      "css": ".ds-nav{display:flex;flex-direction:column;gap:5px;width:180px;}.ds-nav a{font-family:'Manrope Variable',sans-serif;display:flex;align-items:center;min-height:40px;padding:10px;color:#929296;border-radius:6px;font-size:12px;text-decoration:none;transition:color .18s,background .18s;}.ds-nav a:hover{background:#111;color:var(--text,#fff);}.ds-nav a[aria-current]{background:#191919;color:var(--text,#fff);}.ds-nav a:focus-visible{outline:2px solid var(--text,#fff);outline-offset:3px;}@media(prefers-reduced-motion:reduce){[class^=\"ds-\"]{transition:none!important;transform:none!important;}}"
+    },
+    {
+      "name": "Demonstration badge",
+      "kind": "chip",
+      "refersTo": "demo-badge",
+      "description": "Persistent provenance tag rather than a decorative status.",
+      "html": "<span class=\"ds-demo\">Demo</span>",
+      "css": ".ds-demo{font-family:'Manrope Variable',sans-serif;display:inline-block;font-size:8px;font-weight:500;letter-spacing:.1px;padding:3px 6px;border:1px solid #3b3b3b;border-radius:4px;color:#aaa;}@media(prefers-reduced-motion:reduce){[class^=\"ds-\"]{transition:none!important;transform:none!important;}}"
+    },
+    {
+      "name": "Regional summary",
+      "kind": "card",
+      "refersTo": "regional-summary",
+      "description": "An actionable region shortcut with a sample reading.",
+      "html": "<button class=\"ds-region\"><span>Bay of Bengal</span><strong>Illustrative field</strong><small>15\u00b0 N, 88\u00b0 E</small></button>",
+      "css": ".ds-region{font-family:'Manrope Variable',sans-serif;text-align:left;background:#131313;color:var(--text,#fff);border:1px solid #292929;border-radius:6px;padding:11px 14px;min-width:220px;min-height:91px;cursor:pointer;transition:border-color .2s,background .2s;}.ds-region:hover{border-color:#595959;background:#191919;}.ds-region:focus-visible{outline:2px solid var(--text,#fff);outline-offset:3px;}.ds-region>span{font-size:11px;color:#b3b3b9;display:block;}.ds-region strong{font-size:16px;font-weight:450;display:block;margin-top:7px;}.ds-region small{font-size:9px;color:#96969b;margin-top:3px;display:block;}@media(prefers-reduced-motion:reduce){[class^=\"ds-\"]{transition:none!important;transform:none!important;}}"
+    },
+    {
+      "name": "Architecture assembly toggle",
+      "kind": "custom",
+      "description": "Assembled and exploded views of the conceptual model.",
+      "html": "<div class=\"ds-assembly-toggle\" role=\"group\" aria-label=\"Assembly view\"><button aria-pressed=\"true\">Exploded</button><button aria-pressed=\"false\">Assembled</button></div>",
+      "css": ".ds-assembly-toggle{display:inline-flex;padding:4px;gap:3px;background:#090909;border:1px solid #29292d;border-radius:100px;}.ds-assembly-toggle button{font-family:'Manrope Variable',sans-serif;border:0;background:none;border-radius:100px;padding:9px 16px;color:#95959b;font-size:10px;cursor:pointer;transition:background .2s,color .2s;}.ds-assembly-toggle button[aria-pressed=true]{background:#eee;color:#000;}.ds-assembly-toggle button:hover{color:var(--text,#fff);}.ds-assembly-toggle button[aria-pressed=true]:hover{color:#000;}.ds-assembly-toggle button:focus-visible{outline:2px solid var(--text,#fff);outline-offset:3px;}@media(prefers-reduced-motion:reduce){.ds-assembly-toggle button{transition:none;}}"
+    },
+    {
+      "name": "Architecture feature disclosure",
+      "kind": "custom",
+      "description": "Ruled feature explanation with a native disclosure.",
+      "html": "<details class=\"ds-feature\"><summary>Sea surface temperature<span aria-hidden=\"true\">+</span></summary><p>The direct thermal boundary at the ocean surface.</p></details>",
+      "css": ".ds-feature{font-family:'Manrope Variable',sans-serif;border-bottom:1px solid #27272b;color:#dedee1;max-width:420px;}.ds-feature summary{display:flex;align-items:center;justify-content:space-between;cursor:pointer;min-height:70px;list-style:none;font-size:12px;}.ds-feature summary::-webkit-details-marker{display:none;}.ds-feature summary span{color:#a2a2a8;transition:transform .2s;}.ds-feature[open] summary span{transform:rotate(45deg);}.ds-feature summary:hover{color:var(--text,#fff);}.ds-feature summary:focus-visible{outline:2px solid var(--text,#fff);outline-offset:3px;}.ds-feature p{font-size:12px;line-height:1.9;color:#aaaab0;padding:0 25px 21px 0;margin:0;}@media(prefers-reduced-motion:reduce){.ds-feature summary span{transition:none;}}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Ocean depth, in focus",
+    "overview": "OceanEmbed carries the approved pure-black, white-text landing identity into a compact scientific workspace. The orbital Earth, depth volume, and learning diagram remain the landing page's dominant visuals. The dashboard gives that same visual restraint a denser expression through a large geographic canvas, quiet controls, and a persistent location inspector.\n\nThis is an extraction of the implemented world, not a new visual direction. Self-hosted Manrope and Phosphor regular icons connect both surfaces. Data color explains ocean fields; it does not become decorative brand color.",
+    "keyCharacteristics": [
+      "Pure-black landing canvas and near-black workspace surfaces.",
+      "Large optical landing type and compact dashboard hierarchy.",
+      "Fine separators, restrained rounded controls, and no elevated card treatment.",
+      "Purposeful motion with reduced-motion support."
+    ],
+    "rules": [
+      {
+        "name": "The Data Color Rule",
+        "body": "Keep scientific color inside data visualizations and legends. Interface chrome stays monochrome; coordinate validation may use the existing muted error text and border.",
+        "section": "colors"
+      }
+    ],
+    "dos": [
+      "Do preserve the approved three-section landing composition and Earth assets.",
+      "Do use Manrope and Phosphor consistently across both surfaces.",
+      "Do keep map legends, units, depth, date, and selection synchronized.",
+      "Do retain visible focus, reduced motion, and explicit demonstration labels."
+    ],
+    "donts": [
+      "Don't add ornamental badges, decorative stars, fabricated metrics, or card grids to the landing.",
+      "Don't turn the scientific map palette into interface decoration.",
+      "Don't imply that synthetic fields are observations or trained model results.",
+      "Don't silently collapse the desktop dashboard into a mobile layout.",
+      "Don't present the conceptual architecture assembly as physical hardware or measured model performance."
+    ]
+  }
+}
