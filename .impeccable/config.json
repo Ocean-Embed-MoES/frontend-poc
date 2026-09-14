@@ -1,0 +1,28 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "flat-type-hierarchy",
+        "value": "*",
+        "files": [
+          "architecture/index.html",
+          "dashboard/index.html",
+          "index.html"
+        ],
+        "createdAt": "2026-09-14T08:37:28.392Z",
+        "reason": "Agent verified: HTML-only scan reports all headings as 16px because styles are imported through JavaScript. Actual CSS uses landing h1 78–132px with 16–20px body, dashboard h1 23px with 14px body, and architecture h1 72–110px with 16px body. User tested and approved the larger typography."
+      },
+      {
+        "rule": "design-system-font",
+        "value": "phosphor",
+        "files": [
+          "src/style.css"
+        ],
+        "createdAt": "2026-09-14T08:37:28.459Z",
+        "reason": "Agent verified: Phosphor is the icon font, documented in DESIGN.md as the sole icon family; Manrope remains the text family. This is an existing intentional icon asset, not a new typographic brand addition."
+      }
+    ]
+  }
+}
