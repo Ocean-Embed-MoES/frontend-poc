@@ -1,7 +1,7 @@
 # OceanEmbed behavior contract
 
 ## Surfaces and source evidence
-Landing: approved minimalist public introduction. Dashboard: desktop scientific exploration workspace requested by the user. Scientific variables and domain follow problem_statement.md and architecture_design_v3_final.md. All rendered ocean values are clearly labelled synthetic demonstration data until actual datasets are supplied.
+Landing: approved minimalist public introduction. Dashboard: desktop scientific exploration workspace requested by the user. Scientific variables and domain follow problem_statement.md and architecture_design_v3_final.md. Ocean values remain synthetic; data provenance is retained in documentation and CSV exports. Visible demo labels were removed at the user’s request.
 
 ## Canonical UI map
 | Capability | Owner | Decision | Verification |
@@ -17,7 +17,7 @@ Landing: approved minimalist public introduction. Dashboard: desktop scientific 
 
 ## Workflow rules
 - Map click selects an ocean grid cell. Land clicks preserve the current selection and explain how to recover.
-- Drag pans; wheel and +/- zoom; reset fits the selected region. Canvas keyboard controls have visible coordinate-form and zoom-button alternatives.
+- Drag pans; wheel/trackpad zoom anchors to the pointer and normalizes pixel/line/page deltas; two-pointer pinch and +/- buttons also zoom; reset fits the selected region. Canvas keyboard controls have visible coordinate-form and zoom-button alternatives.
 - A depth change updates map, profile marker, values and regional summaries. Surface-only variables disable depth changes and explicitly label their surface nature; returning to temperature restores the chosen depth.
 - Map and depth-section views share date/location/depth; section values are sampled along the selected longitude.
 - A date change updates all synthetic fields and charts. Invalid or unavailable dates cannot leave stale labels above different data.

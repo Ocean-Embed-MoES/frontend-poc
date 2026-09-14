@@ -21,8 +21,8 @@
 
     <main id="main">
       <section class="hero" id="home" aria-labelledby="hero-title">
-        <div class="hero-art" role="img" aria-label="A slowly rotating, sunlit Earth, seen from orbit above the Indian Ocean">
-          <canvas id="earth-canvas" aria-hidden="true"></canvas>
+        <div class="hero-art">
+          <canvas id="earth-canvas" tabindex="0" role="img" aria-label="Earth in natural color. Drag to rotate, use arrow keys, or press Home to reset." aria-describedby="earth-hint"></canvas>
           <img class="earth-fallback" src="/assets/earth-poster.png" alt="" />
         </div>
         <div class="hero-copy">
@@ -32,6 +32,7 @@
         </div>
         <div class="hero-bottom">
           <p>Satellite observations.<br /><span>A new perspective on our ocean.</span></p>
+          <div class="earth-controls" aria-label="Earth controls" hidden><span id="earth-hint">Drag to explore</span><button id="earth-rotate" aria-label="Rotate Earth" title="Rotate Earth"><i class="ph ph-arrow-up-right" aria-hidden="true"></i></button><button id="earth-reset" aria-label="Reset Earth view" title="Reset Earth view"><i class="ph ph-arrow-up" aria-hidden="true"></i></button></div>
           <button class="motion-control" aria-label="Pause ambient animation" aria-pressed="false"><i class="ph ph-pause" aria-hidden="true"></i><span>Pause motion</span></button>
         </div>
       </section>
@@ -43,7 +44,7 @@
           <a class="button button-light" href="/dashboard/">Explore the dashboard <i class="ph ph-arrow-up-right" aria-hidden="true"></i></a>
         </div>
         <figure class="depth-study">
-          <div class="depth-art" role="img" aria-label="An illustrative three-dimensional study of ocean layers, with the selected depth highlighted">
+          <div class="depth-art" role="img" aria-label="A three-dimensional study of ocean layers, with the selected depth highlighted">
             <canvas id="depth-canvas" aria-hidden="true"></canvas>
             <div class="depth-fallback" aria-hidden="true"></div>
           </div>
@@ -53,7 +54,7 @@
             <input id="depth-slider" type="range" min="0" max="14" value="7" step="1" aria-valuetext="100 metres below the surface" />
             <div class="range-labels"><span>Surface</span><span>1,000 m</span></div>
           </div>
-          <figcaption>15 depth levels <span aria-hidden="true">/</span> Illustrative ocean study</figcaption>
+          <figcaption>15 depth levels <span aria-hidden="true">/</span> Ocean depth study</figcaption>
         </figure>
         <div class="section-baseline"><span>Bay of Bengal & Arabian Sea</span><span>Daily. At 0.25° resolution.</span></div>
       </section>

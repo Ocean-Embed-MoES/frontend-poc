@@ -1,6 +1,7 @@
 import { geoMercator, geoEquirectangular, geoPath } from "d3-geo";
 import { feature } from "topojson-client";
 import world from "world-atlas/countries-50m.json";
+import { wheelZoomFactor, zoomAt } from "./zoom";
 import {
   sample,
   colorAt,
@@ -195,13 +196,13 @@ export function createOceanMap(canvas, onSelect, onMessage) {
     }
     ctx.textAlign = "center";
     ctx.textBaseline = "middle";
-    ctx.font = '10px "Manrope Variable", sans-serif';
+    ctx.font = '12px "Manrope Variable", sans-serif';
     for (const [name, lon, lat] of cities) {
       const [x, y] = projection([lon, lat]);
       ctx.fillStyle = "#c0c0c1";
       ctx.fillText(name, x, y);
     }
-    ctx.font = 'italic 12px "Manrope Variable", sans-serif';
+    ctx.font = 'italic 15px "Manrope Variable", sans-serif';
     ctx.fillStyle = "#d3e0e7a0";
     const arabian = projection([64, 12]);
     ctx.fillText("Arabian Sea", ...arabian);
@@ -241,7 +242,7 @@ export function createOceanMap(canvas, onSelect, onMessage) {
         ctx.strokeStyle = "#e9f0f3";
         ctx.lineWidth = 1.3;
         ctx.stroke();
-        ctx.font = '9px "Manrope Variable",sans-serif';
+        ctx.font = '12px "Manrope Variable",sans-serif';
         ctx.fillStyle = "#fff";
         ctx.fillText(`S${i + 1}`, p[0] + 12, p[1] - 8);
       });
@@ -268,7 +269,7 @@ export function createOceanMap(canvas, onSelect, onMessage) {
     ctx.lineTo(p[0], p[1] + 17);
     ctx.stroke();
     // Geographic edge labels refer to the same projection as the grid.
-    ctx.font = '9px "Manrope Variable",sans-serif';
+    ctx.font = '12px "Manrope Variable",sans-serif';
     ctx.fillStyle = "#929b9f";
     ctx.textAlign = "center";
     for (let lon = 40; lon <= 110; lon += 10) {
@@ -302,7 +303,7 @@ export function createOceanMap(canvas, onSelect, onMessage) {
       }
     }
     ctx.fillStyle = "#adb1b6";
-    ctx.font = '10px "Manrope Variable",sans-serif';
+    ctx.font = '12px "Manrope Variable",sans-serif';
     ctx.textAlign = "right";
     [0, 200, 500, 700, 1000].forEach((d) => {
       const y = box.y + (d / 1000) * box.h;
@@ -375,14 +376,51 @@ export function createOceanMap(canvas, onSelect, onMessage) {
     const r = canvas.getBoundingClientRect();
     return [event.clientX - r.left, event.clientY - r.top];
   }
+  function applyZoom(factor, anchor = [width / 2, height / 2]) {
+    // The map's resting projection is offset 12 pixels below the viewport center.
+    const next = zoomAt(
+      zoom,
+      pan,
+      factor,
+      [anchor[0], anchor[1] - 12],
+      [width, height],
+    );
+    zoom = next.zoom;
+    pan = next.pan;
+    updateProjection();
+    tooltip.hidden = true;
+    schedule();
+  }
+  const contacts = new Map();
+  let pinch = null;
+  function gesture() {
+    const [a, b] = [...contacts.values()];
+    return {
+      distance: Math.max(1, Math.hypot(a[0] - b[0], a[1] - b[1])),
+      midpoint: [(a[0] + b[0]) / 2, (a[1] + b[1]) / 2],
+    };
+  }
   canvas.addEventListener("pointerdown", (event) => {
     if (event.button !== 0) return;
+    contacts.set(event.pointerId, locatePoint(event));
+    if (contacts.size === 2 && state.view === "map") pinch = gesture();
     drag = { start: locatePoint(event), pan: [...pan], moved: false };
     canvas.setPointerCapture(event.pointerId);
     canvas.classList.add("dragging");
   });
   canvas.addEventListener("pointermove", (event) => {
     const [x, y] = locatePoint(event);
+    if (contacts.has(event.pointerId)) contacts.set(event.pointerId, [x, y]);
+    if (pinch && contacts.size >= 2 && state.view === "map") {
+      const next = gesture();
+      applyZoom(next.distance / pinch.distance, pinch.midpoint);
+      pan = pan.map(
+        (value, axis) => value + next.midpoint[axis] - pinch.midpoint[axis],
+      );
+      pinch = next;
+      if (drag) drag.moved = true;
+      return;
+    }
     if (drag) {
       if (Math.hypot(x - drag.start[0], y - drag.start[1]) > 3)
         drag.moved = true;
@@ -414,6 +452,17 @@ export function createOceanMap(canvas, onSelect, onMessage) {
     tooltip.hidden = false;
   });
   canvas.addEventListener("pointerup", (event) => {
+    contacts.delete(event.pointerId);
+    if (pinch || contacts.size > 0) {
+      pinch = null;
+      drag = contacts.size
+        ? { start: [...contacts.values()][0], pan: [...pan], moved: true }
+        : null;
+      canvas.classList.toggle("dragging", Boolean(drag));
+      if (canvas.hasPointerCapture(event.pointerId))
+        canvas.releasePointerCapture(event.pointerId);
+      return;
+    }
     if (!drag) return;
     const moved = drag.moved;
     drag = null;
@@ -448,7 +497,9 @@ export function createOceanMap(canvas, onSelect, onMessage) {
         "Select an ocean cell inside the highlighted North Indian Ocean grid.",
       );
   });
-  canvas.addEventListener("pointercancel", () => {
+  canvas.addEventListener("pointercancel", (event) => {
+    contacts.delete(event.pointerId);
+    pinch = null;
     drag = null;
     canvas.classList.remove("dragging");
   });
@@ -460,8 +511,11 @@ export function createOceanMap(canvas, onSelect, onMessage) {
     (event) => {
       if (state.view !== "map") return;
       event.preventDefault();
-      zoom = Math.max(0.8, Math.min(5, zoom * Math.exp(-event.deltaY * 0.001)));
-      schedule();
+      event.stopPropagation();
+      applyZoom(
+        wheelZoomFactor(event.deltaY, event.deltaMode, event.ctrlKey, height),
+        locatePoint(event),
+      );
     },
     { passive: false },
   );
@@ -481,13 +535,11 @@ export function createOceanMap(canvas, onSelect, onMessage) {
     }
     if (event.key === "+" || event.key === "=") {
       event.preventDefault();
-      zoom = Math.min(5, zoom * 1.25);
-      schedule();
+      applyZoom(1.25);
     }
     if (event.key === "-") {
       event.preventDefault();
-      zoom = Math.max(0.8, zoom / 1.25);
-      schedule();
+      applyZoom(1 / 1.25);
     }
     if (event.key === "Enter") {
       event.preventDefault();
@@ -509,8 +561,7 @@ export function createOceanMap(canvas, onSelect, onMessage) {
       schedule();
     },
     zoom(amount) {
-      zoom = Math.max(0.8, Math.min(5, zoom * amount));
-      schedule();
+      applyZoom(amount);
     },
     region(preset) {
       center = [...preset.center];

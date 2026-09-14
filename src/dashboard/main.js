@@ -201,9 +201,7 @@ function update() {
   $("#selected-value").innerHTML =
     `${values[state.layer].toFixed(layer.decimals)} <span>${layer.unit}</span>`;
   $("#selected-value-description").textContent =
-    state.layer === "temperature"
-      ? "Illustrative reconstruction"
-      : "Illustrative surface field";
+    state.layer === "temperature" ? "Temperature field" : "Surface field";
   const surface = sample(state.lon, state.lat, 0, state.date);
   $("#surface-temperature").textContent =
     `${surface.temperature.toFixed(2)} °C`;
@@ -223,7 +221,7 @@ function update() {
   const availableDays = history(state.lon, state.lat, depth, state.date).length;
   $("#chart-context").textContent =
     state.chart === "profile"
-      ? "Dashed line: illustrative reference profile."
+      ? "Dashed line: reference profile."
       : `Temperature at ${depth.toLocaleString()} m. ${availableDays} available daily ${availableDays === 1 ? "sample" : "samples"}.`;
   $("#overview-date").textContent = formatDate(state.date);
   for (const name of ["bengal", "arabian"]) {
@@ -481,9 +479,7 @@ $("#export-data").addEventListener("click", () => {
   a.click();
   a.remove();
   setTimeout(() => URL.revokeObjectURL(url), 1000);
-  toast(
-    "Profile exported. The CSV includes all 15 depths and demonstration provenance.",
-  );
+  toast("Profile exported with all 15 depth levels.");
 });
 
 const dialog = $("#dashboard-dialog");
@@ -492,7 +488,7 @@ function openInfo(kind, opener) {
   stopPlayback();
   $("#dashboard-dialog-content").innerHTML =
     kind === "data"
-      ? '<h2 id="dashboard-dialog-title">A workspace for what comes next.</h2><p class="dialog-intro">This dashboard uses deterministic synthetic ocean fields to demonstrate OceanEmbed’s interface. Temperature, salinity, sea level, currents, reference profiles, and sample stations are illustrative. They are not satellite observations, ARGO measurements, or trained model predictions.</p><div class="pipeline-details"><article><h3>Real geography</h3><p>Coastlines and country boundaries use the local Natural Earth dataset. The reconstruction domain is 5–30° N, 45–105° E, sampled on a 0.25° grid.</p></article><article><h3>Ready for real data</h3><p>The data module is separate from the interface. Satellite fields and OceanEmbed outputs can replace it while preserving the same exploration workflow.</p></article></div>'
+      ? '<h2 id="dashboard-dialog-title">The North Indian Ocean.</h2><p class="dialog-intro">Explore temperature, salinity, sea level, and surface circulation across the Bay of Bengal and Arabian Sea.</p><div class="pipeline-details"><article><h3>One connected grid</h3><p>The workspace covers 5–30° N and 45–105° E at 0.25° resolution. Coastlines and country boundaries use Natural Earth geography.</p></article><article><h3>From surface to depth</h3><p>Select a location, change the date, and move through fifteen standard depth levels. The map, profile, and regional summaries follow your selection.</p></article></div>'
       : '<h2 id="dashboard-dialog-title">Find your way below.</h2><div class="pipeline-details guide-details"><article><h3>Explore the map</h3><p>Click an ocean cell to inspect its values. Drag to pan, scroll to zoom, or use the map buttons. Arrow keys pan a focused map; + and − zoom.</p></article><article><h3>Move through depth</h3><p>Use the depth slider or labelled shortcuts. The selected layer and charts update together. Salinity, sea level, and wind stress curl are surface-only layers.</p></article><article><h3>See another dimension</h3><p>Depth section shows a latitude–depth slice along the selected longitude. Click inside the section to select a point and depth.</p></article><article><h3>Keep your discoveries</h3><p>Bookmark locations in the inspector, compare regional presets, step through dates, and export all 15 depth values as a CSV.</p></article></div>';
   dialog.showModal();
   $("#close-dashboard-dialog").focus();

@@ -82,14 +82,13 @@ async function createEarth() {
         vec3 n=normalize(vNormal);
         vec3 light=normalize(vec3(.8,.65,1.0));
         vec3 tex=texture2D(dayMap,vUv).rgb;
-        float land=dot(tex,vec3(.299,.587,.114));
         float cloud=texture2D(cloudMap,vUv).r;
         float diffuse=max(dot(n,light),0.0);
         float daylight=smoothstep(-.13,.42,dot(n,light));
-        float luminance=mix(land*.9, .88, cloud*.84);
-        vec3 col=vec3(luminance)*(diffuse*.88+.055)*daylight;
+        vec3 surface=mix(tex,vec3(.94,.96,1.0),cloud*.84);
+        vec3 col=surface*(diffuse*.95+.10)*daylight;
         float fresnel=pow(1.0-max(dot(n,normalize(vView)),0.0),3.8);
-        col+=vec3(.62,.66,.70)*fresnel*diffuse*.36;
+        col+=vec3(.22,.48,.82)*fresnel*diffuse*.32;
         gl_FragColor=vec4(col,1.0);
       }
     `,
@@ -122,12 +121,45 @@ async function createEarth() {
   orbitGroup.add(satellite);
   view.scene.add(orbitGroup);
   let elapsed = 0;
-  const state = { rotation: 0, scale: 1 };
+  const state = { rotation: 0, tilt: 0, scale: 1 };
+  let drag = null;
+  const onDown = (event) => {
+    if(event.button!==0)return;
+    drag={x:event.clientX,y:event.clientY,rotation:state.rotation,tilt:state.tilt};
+    canvas.setPointerCapture(event.pointerId);
+  };
+  const onMove = (event) => {
+    if(!drag)return;
+    state.rotation=drag.rotation+(event.clientX-drag.x)*.006;
+    state.tilt=THREE.MathUtils.clamp(drag.tilt+(event.clientY-drag.y)*.004,-.65,.65);
+    view.dirty=true;
+  };
+  const onUp = (event) => {
+    drag=null;
+    if(canvas.hasPointerCapture(event.pointerId))canvas.releasePointerCapture(event.pointerId);
+  };
+  const reset = () => { elapsed=0;state.rotation=0;state.tilt=0;view.dirty=true; };
+  const rotate = () => { state.rotation+=Math.PI/6;view.dirty=true; };
+  const onKey = (event) => {
+    if(!['ArrowLeft','ArrowRight','ArrowUp','ArrowDown','Home'].includes(event.key))return;
+    event.preventDefault();
+    if(event.key==='Home')reset();
+    else if(event.key==='ArrowLeft')state.rotation-=.15;
+    else if(event.key==='ArrowRight')state.rotation+=.15;
+    else state.tilt=THREE.MathUtils.clamp(state.tilt+(event.key==='ArrowUp'?-.1:.1),-.65,.65);
+    view.dirty=true;
+  };
+  canvas.addEventListener('pointerdown',onDown);
+  canvas.addEventListener('pointermove',onMove);
+  canvas.addEventListener('pointerup',onUp);
+  canvas.addEventListener('pointercancel',onUp);
+  canvas.addEventListener('keydown',onKey);
   function update(delta, paused) {
     if (!view.visible) return;
-    if (!paused) elapsed += delta;
-    if (!paused || view.dirty) {
+    if (!paused && !drag) elapsed += delta;
+    if ((!paused && !drag) || view.dirty) {
       globe.rotation.y = -2.67 + elapsed * .025 + state.rotation;
+      globe.rotation.x = .12 + state.tilt;
       globe.scale.setScalar(state.scale);
       const a = elapsed * .09 + .45;
       satellite.position.set(Math.cos(a)*1.38,Math.sin(a)*1.38,0);
@@ -137,7 +169,11 @@ async function createEarth() {
   }
   view.draw();
   canvas.parentElement.classList.add('ready');
-  return { update, state, dirty:()=>{view.dirty=true;}, dispose:()=>view.dispose() };
+  return { update, state, reset, rotate, dirty:()=>{view.dirty=true;}, dispose:()=>{
+    canvas.removeEventListener('pointerdown',onDown);canvas.removeEventListener('pointermove',onMove);
+    canvas.removeEventListener('pointerup',onUp);canvas.removeEventListener('pointercancel',onUp);canvas.removeEventListener('keydown',onKey);
+    view.dispose();
+  } };
 }
 
 function createDepth() {

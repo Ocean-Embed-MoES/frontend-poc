@@ -40,14 +40,14 @@ typography:
     letterSpacing: "-0.7px"
   body:
     fontFamily: "'Manrope Variable', sans-serif"
-    fontSize: "14px"
+    fontSize: "16px"
     lineHeight: 1.9
   workspace-body:
     fontFamily: "'Manrope Variable', sans-serif"
-    fontSize: "12px"
+    fontSize: "14px"
   button-label:
     fontFamily: "'Manrope Variable', sans-serif"
-    fontSize: "13px"
+    fontSize: "16px"
     fontWeight: 650
 rounded:
   field: "4px"
@@ -130,15 +130,15 @@ Muted gray supports explanatory copy; display-secondary distinguishes the quiete
 
 Manrope Variable is self-hosted and used throughout, with sans-serif fallback. Landing headings use tight optical tracking and light-to-medium weight. Supporting paragraphs remain normal-reading text with generous line height. Dashboard title, controls, and numeric readouts use a smaller hierarchy; depth, coordinates, and field values use tabular numerals where implemented.
 
-The frontmatter captures desktop roles. Mobile landing display type changes to `clamp(67px, 12.8vw, 96px)` and section headings to `clamp(43px, 8.2vw, 62px)`. Dashboard controls mostly use 10–12px text, with smaller metadata. Phosphor regular is the sole icon family; do not introduce a second icon style.
+The frontmatter captures desktop roles. Mobile landing display type changes to `clamp(67px, 12.8vw, 96px)` and section headings to `clamp(43px, 8.2vw, 62px)`. Dashboard controls use 13–14px text; compact metadata and chart labels have a 12px baseline. Phosphor regular is the sole icon family; do not introduce a second icon style.
 
 ## Layout
 
 The landing retains exactly three sections: left copy and a large right Earth; exploration copy and depth volume; architecture copy and an open three-stage diagram. The small footer belongs to the third section. Mobile layouts stack copy and visuals with the mobile gutter. Large landing sections cap at 1500px above the wide-screen breakpoint.
 
-The desktop dashboard fills the viewport with a 210px sidebar, flexible central visualization, and 290px inspector. At 1600px and above the sidebar and inspector become 230px and 320px. Header, toolbar, depth strip, regional overview, and status footer surround the remaining map area. The sidebar and inspector own vertical overflow. Minimum workspace width is 1120px; narrower windows scroll horizontally. Minimum height is normally 740px, reduced to 700px at heights up to 800px, so shorter viewports can also overflow vertically. This surface has no mobile rearrangement.
+The desktop dashboard fills the viewport with a 240px sidebar, flexible central visualization, and 320px inspector. At 1600px and above the sidebar and inspector become 250px and 340px. Header, toolbar, depth strip, regional overview, and status footer surround the remaining map area. The sidebar and inspector own vertical overflow. Minimum workspace width is 1200px; narrower windows scroll horizontally. Minimum height is normally 740px, increased to 780px at heights up to 800px, so shorter viewports can also overflow vertically. This surface has no mobile rearrangement.
 
-The `/architecture/` showcase extends the open landing composition: a large left headline and monochrome exploded model lead into signal flow, feature explanations, training/validation, and a closing explorer CTA. Architecture sections cap at 1800px and share the global gutter. At 900px and below the hero and content stack; 600px refines mobile labels and changes six stage tabs to two rows. The network diagram retains an 850px minimum width inside its own horizontal scroller. Architecture display type uses `clamp(72px, 6.5vw, 110px)`, weight 480, line-height 1.07, and tracking -0.055em. These are surface-specific variants, not replacements for the existing landing roles.
+The `/architecture/` showcase extends the open landing composition: a large left headline and monochrome exploded model lead into signal flow, feature explanations, training/validation, and a closing explorer CTA. Architecture sections cap at 1800px and share the global gutter. At 900px and below the hero and content stack; 600px refines mobile labels and changes six stage tabs to two rows. The network diagram retains an 1100px minimum width inside its own horizontal scroller. Architecture display type uses `clamp(72px, 6.5vw, 110px)`, weight 480, line-height 1.07, and tracking -0.055em. These are surface-specific variants, not replacements for the existing landing roles.
 
 ## Elevation & Depth
 
@@ -168,7 +168,7 @@ Sidebar navigation uses muted text, a subtle hover surface, and a brighter fille
 
 ### Badges and regional summaries
 
-The small outlined Demo badge and persistent dataset/status text communicate provenance. Regional summaries pair a numeric value with a muted sparkline and act as region shortcuts. They are dashboard instruments, not a pattern to add to the open landing layout.
+The workspace uses neutral dataset and status labels without a Demo badge. Regional summaries pair a numeric value with a muted sparkline and act as region shortcuts. They are dashboard instruments, not a pattern to add to the open landing layout.
 
 ### Map and inspector
 
@@ -196,3 +196,6 @@ Feature explanations use open ruled rows with native disclosures, compact catego
 - Don't imply that synthetic fields are observations or trained model results.
 - Don't silently collapse the desktop dashboard into a mobile layout.
 - Don't present the conceptual architecture assembly as physical hardware or measured model performance.
+
+## Approved readability and color refinement
+The user requested larger supporting text and a natural-color Earth. Keep the existing display headings, Manrope family, pure-black backgrounds and white controls. Landing and architecture prose use a 16px baseline; captions and scientific annotations use 12–14px. Use rem units for supporting type. Make room for text through wider labels, taller rows, and wrapping. The Earth’s blues and greens are a subject-specific exception to monochrome, alongside the dashboard’s scientific field palette. The Earth supports drag, arrow keys, rotate and reset; architecture signal flow loops only while visible and offers pause/resume. UI demo badges and warnings are omitted; technical documentation and CSV retain honest provenance.

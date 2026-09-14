@@ -2,7 +2,7 @@
   background: var(--bg);
   overflow-x: auto;
   color: #f1f1f2;
-  font-size: 12px;
+  font-size: 0.875rem;
 }
 .dashboard-app {
   display: grid;
@@ -69,7 +69,7 @@
   padding: 10px;
   color: #929296;
   border-radius: 6px;
-  font-size: 11px;
+  font-size: 0.875rem;
   transition:
     color 0.18s,
     background 0.18s;
@@ -87,14 +87,14 @@
 }
 .workspace-nav .nav-arrow {
   margin-left: auto;
-  font-size: 12px;
+  font-size: 0.875rem;
 }
 .sidebar-section {
   padding: 24px 15px;
   border-bottom: 1px solid #202020;
 }
 .sidebar h2 {
-  font-size: 10px;
+  font-size: 0.8125rem;
   font-weight: 500;
   color: #929296;
   letter-spacing: 0.1px;
@@ -151,11 +151,11 @@
   display: flex;
   flex-direction: column;
   gap: 6px;
-  font-size: 11px;
+  font-size: 0.875rem;
   font-weight: 500;
 }
 .layer-option small {
-  font-size: 8px;
+  font-size: 0.75rem;
   color: #99999d;
   font-weight: 400;
   white-space: nowrap;
@@ -184,7 +184,7 @@
   margin: 0 9px;
   min-height: 38px;
   cursor: pointer;
-  font-size: 10px;
+  font-size: 0.8125rem;
   color: #aaaab0;
 }
 .overlays > label > span {
@@ -197,7 +197,7 @@
   cursor: not-allowed;
 }
 .overlays .ph {
-  font-size: 15px;
+  font-size: 0.9375rem;
 }
 .overlays input {
   appearance: none;
@@ -241,12 +241,12 @@
   padding-right: 9px;
 }
 .section-title-row > span {
-  font-size: 9px;
+  font-size: 0.75rem;
   color: #999;
   margin-bottom: 17px;
 }
 .sidebar-empty {
-  font-size: 10px;
+  font-size: 0.8125rem;
   line-height: 1.8;
   color: #929297;
   padding: 0 9px;
@@ -272,17 +272,17 @@
   background: #171717;
 }
 .saved-point .ph {
-  font-size: 14px;
+  font-size: 0.875rem;
   color: #aaa;
 }
 .saved-point > span {
-  font-size: 10px;
+  font-size: 0.8125rem;
   display: flex;
   flex-direction: column;
   gap: 4px;
 }
 .saved-point small {
-  font-size: 8px;
+  font-size: 0.75rem;
   color: #999;
   white-space: nowrap;
 }
@@ -297,13 +297,13 @@
   display: flex;
   align-items: center;
   gap: 9px;
-  font-size: 9px;
+  font-size: 0.75rem;
   line-height: 1.5;
 }
 .dataset-mark > div > span {
   display: block;
   color: #8d8d93;
-  font-size: 8px;
+  font-size: 0.75rem;
   margin-top: 3px;
 }
 .dataset-icon {
@@ -316,7 +316,7 @@
   flex-shrink: 0;
 }
 .dataset-icon .ph {
-  font-size: 14px;
+  font-size: 0.875rem;
 }
 .dataset-mark .bare-icon {
   width: 20px;
@@ -324,7 +324,7 @@
   margin-left: auto;
 }
 .dataset-mark .bare-icon .ph {
-  font-size: 13px;
+  font-size: 0.9375rem;
 }
 .return-home {
   border-top: 1px solid #242424;
@@ -334,13 +334,13 @@
   padding: 19px 0 4px;
   margin-top: 20px;
   color: #999;
-  font-size: 10px;
+  font-size: 0.8125rem;
 }
 .return-home:hover {
   color: #fff;
 }
 .return-home .ph {
-  font-size: 14px;
+  font-size: 0.875rem;
 }
 .dashboard-main {
   min-width: 0;
@@ -361,7 +361,7 @@
   background: #080808;
 }
 .workspace-breadcrumb {
-  font-size: 9px;
+  font-size: 0.75rem;
   color: #8b8b91;
   margin-bottom: 8px;
 }
@@ -378,7 +378,7 @@
   gap: 12px;
 }
 .demo-badge {
-  font-size: 8px;
+  font-size: 0.75rem;
   font-weight: 500;
   letter-spacing: 0.1px;
   padding: 3px 6px;
@@ -397,7 +397,7 @@
   align-items: center;
   justify-content: center;
   gap: 9px;
-  font-size: 10px;
+  font-size: 0.8125rem;
   border-radius: 6px;
   padding: 10px 13px;
   min-height: 35px;
@@ -424,7 +424,7 @@
   color: #fff;
 }
 .header-actions .ph {
-  font-size: 15px;
+  font-size: 0.9375rem;
 }
 .workspace-toolbar {
   height: 57px;
@@ -452,7 +452,7 @@
   border: 0;
   border-bottom: 2px solid transparent;
   color: #8c8c93;
-  font-size: 10px;
+  font-size: 0.8125rem;
   padding: 0 2px;
   white-space: nowrap;
 }
@@ -461,7 +461,7 @@
   border-bottom-color: white;
 }
 .view-tabs .ph {
-  font-size: 15px;
+  font-size: 0.9375rem;
 }
 .toolbar-filters {
   display: flex;
@@ -474,7 +474,7 @@
   border: 1px solid #333;
   border-radius: 5px;
   font-family: inherit;
-  font-size: 9px;
+  font-size: 0.75rem;
   min-height: 31px;
   padding: 5px 9px;
   max-width: 175px;
@@ -492,7 +492,7 @@
   padding: 0 2px;
 }
 .date-control input {
-  font-size: 9px;
+  font-size: 0.75rem;
   color: #d4d4d7;
   background: none;
   border: 0;
@@ -509,7 +509,7 @@
   height: 28px;
 }
 .date-control .ph {
-  font-size: 12px;
+  font-size: 0.875rem;
 }
 .bare-icon {
   display: inline-grid;
@@ -592,16 +592,16 @@
   padding: 8px 11px;
   border-radius: 5px;
   gap: 12px;
-  font-size: 10px;
+  font-size: 0.8125rem;
 }
 .map-unit {
-  font-size: 9px;
+  font-size: 0.75rem;
   color: #a0a4a7;
   border-left: 1px solid #3a3e40;
   padding-left: 12px;
 }
 .map-resolution {
-  font-size: 9px;
+  font-size: 0.75rem;
   color: #969ca0;
   background: #090c0ecc;
   padding: 5px 7px;
@@ -639,7 +639,7 @@
   color: #fff;
 }
 .map-icon .ph {
-  font-size: 15px;
+  font-size: 0.9375rem;
 }
 .map-legend {
   position: absolute;
@@ -655,7 +655,7 @@
 .map-legend > div:first-child {
   display: flex;
   justify-content: space-between;
-  font-size: 9px;
+  font-size: 0.75rem;
   margin-bottom: 9px;
   color: #ddd;
 }
@@ -670,7 +670,7 @@
   display: flex;
   justify-content: space-between;
   color: #c3c8cb;
-  font-size: 8px;
+  font-size: 0.75rem;
   margin-top: 6px;
   font-variant-numeric: tabular-nums;
 }
@@ -679,7 +679,7 @@
   bottom: 8px;
   right: 14px;
   color: #9ca2a6;
-  font-size: 7px;
+  font-size: 0.75rem;
   background: #090c0dd9;
   padding: 4px 7px;
   border-radius: 3px;
@@ -691,7 +691,7 @@
   position: absolute;
   bottom: 10px;
   left: 15px;
-  font-size: 8px;
+  font-size: 0.75rem;
   color: #b0b7bb;
   background: #0a0d0ed9;
   padding: 3px 6px;
@@ -708,16 +708,16 @@
   min-width: 140px;
 }
 .map-tooltip strong {
-  font-size: 15px;
+  font-size: 0.9375rem;
   font-weight: 500;
   display: block;
 }
 .map-tooltip strong span {
-  font-size: 10px;
+  font-size: 0.8125rem;
   color: #bac1c6;
 }
 .map-tooltip small {
-  font-size: 9px;
+  font-size: 0.75rem;
   color: #a8b0b8;
   display: block;
   margin-top: 5px;
@@ -731,7 +731,7 @@
   justify-content: center;
   gap: 12px;
   color: #aaa;
-  font-size: 12px;
+  font-size: 0.875rem;
   z-index: 4;
 }
 .map-loading button {
@@ -779,23 +779,23 @@
   align-items: center;
   gap: 8px;
   color: #b0b0b5;
-  font-size: 10px;
+  font-size: 0.8125rem;
 }
 .depth-strip-heading .ph {
-  font-size: 13px;
+  font-size: 0.9375rem;
 }
 .depth-strip-heading output {
-  font-size: 15px;
+  font-size: 0.9375rem;
   font-weight: 500;
   font-variant-numeric: tabular-nums;
 }
 .depth-strip-heading output span {
-  font-size: 10px;
+  font-size: 0.8125rem;
   color: #aaa;
 }
 .depth-mode-note {
   margin-left: auto;
-  font-size: 8px;
+  font-size: 0.75rem;
   color: #96969c;
 }
 .depth-strip input {
@@ -837,7 +837,7 @@
   gap: 10px;
 }
 .depth-ticks button {
-  font-size: 8px;
+  font-size: 0.75rem;
   background: none;
   color: #939399;
   border: 0;
@@ -873,11 +873,11 @@
   height: 22px;
 }
 .observations-heading h2 {
-  font-size: 11px;
+  font-size: 0.875rem;
   font-weight: 500;
 }
 .observations-heading > span {
-  font-size: 8px;
+  font-size: 0.75rem;
   color: #929298;
   margin-left: auto;
 }
@@ -886,7 +886,7 @@
   height: 25px;
 }
 .observations-heading .ph {
-  font-size: 12px;
+  font-size: 0.875rem;
 }
 .region-cards {
   display: grid;
@@ -911,14 +911,14 @@
   background: #191919;
 }
 .region-summary > span {
-  font-size: 9px;
+  font-size: 0.75rem;
   color: #b3b3b9;
   display: flex;
   gap: 10px;
   align-items: center;
 }
 .region-summary > span .ph {
-  font-size: 11px;
+  font-size: 0.875rem;
 }
 .region-summary strong {
   font-size: 22px;
@@ -932,12 +932,12 @@
   white-space: nowrap;
 }
 .region-summary strong > span {
-  font-size: 10px;
+  font-size: 0.8125rem;
   color: #aaa;
   letter-spacing: 0;
 }
 .region-summary > small {
-  font-size: 7px;
+  font-size: 0.75rem;
   color: #96969b;
   margin-top: 3px;
   display: block;
@@ -965,7 +965,7 @@
   margin-bottom: 15px;
 }
 .inspector-heading h2 {
-  font-size: 10px;
+  font-size: 0.8125rem;
   font-weight: 500;
   color: #adadb3;
 }
@@ -974,7 +974,7 @@
   height: 27px;
 }
 .location-identity > p {
-  font-size: 10px;
+  font-size: 0.8125rem;
   color: #a0a0a7;
   margin-bottom: 7px;
 }
@@ -985,7 +985,7 @@
   white-space: nowrap;
 }
 .location-identity > span {
-  font-size: 8px;
+  font-size: 0.75rem;
   color: #939399;
   display: block;
   margin-top: 8px;
@@ -998,7 +998,7 @@
 }
 .selected-value > span:first-child {
   display: block;
-  font-size: 9px;
+  font-size: 0.75rem;
   color: #a5a5ab;
 }
 .selected-value strong {
@@ -1010,12 +1010,12 @@
   margin: 3px 0;
 }
 .selected-value strong span {
-  font-size: 15px;
+  font-size: 0.9375rem;
   letter-spacing: -0.2px;
   color: #aaa;
 }
 .selected-value-description {
-  font-size: 8px;
+  font-size: 0.75rem;
   color: #929298;
 }
 .profile-section {
@@ -1030,7 +1030,7 @@
   border: 0;
   border-bottom: 1px solid transparent;
   background: none;
-  font-size: 9px;
+  font-size: 0.75rem;
   color: #999;
   padding: 9px 0 11px;
   white-space: nowrap;
@@ -1042,7 +1042,7 @@
 .profile-legend {
   display: flex;
   justify-content: space-between;
-  font-size: 8px;
+  font-size: 0.75rem;
   color: #b7b7bd;
   padding: 15px 0 8px;
 }
@@ -1068,12 +1068,12 @@
   overflow: visible;
 }
 #inspector-chart text {
-  font-size: 9px;
+  font-size: 0.75rem;
   font-family: inherit;
   fill: #a7a7ad;
 }
 #inspector-chart .axis-title {
-  font-size: 8px;
+  font-size: 0.75rem;
   fill: #a0a0a5;
 }
 .chart-grid {
@@ -1102,7 +1102,7 @@
   stroke-width: 1.5;
 }
 .chart-context {
-  font-size: 7px;
+  font-size: 0.75rem;
   color: #98989e;
   margin: 10px 0 17px;
   line-height: 1.6;
@@ -1113,7 +1113,7 @@
 }
 .surface-conditions h3,
 .coordinate-form h3 {
-  font-size: 10px;
+  font-size: 0.8125rem;
   font-weight: 500;
   color: #b7b7bc;
   margin: 0 0 14px;
@@ -1125,11 +1125,11 @@
   gap: 16px 12px;
 }
 .surface-conditions dt {
-  font-size: 8px;
+  font-size: 0.75rem;
   color: #96969e;
 }
 .surface-conditions dd {
-  font-size: 12px;
+  font-size: 0.875rem;
   margin: 5px 0 0;
   font-variant-numeric: tabular-nums;
 }
@@ -1144,7 +1144,7 @@
   gap: 7px;
 }
 .coordinate-form label {
-  font-size: 8px;
+  font-size: 0.75rem;
   color: #aaa;
   display: flex;
   flex-direction: column;
@@ -1154,7 +1154,7 @@
 }
 .coordinate-form input {
   width: 100%;
-  font-size: 10px;
+  font-size: 0.8125rem;
   background: #151515;
   color: #eee;
   border: 1px solid #3c3c3c;
@@ -1179,10 +1179,10 @@
   background: #333;
 }
 .coordinate-go .ph {
-  font-size: 15px;
+  font-size: 0.9375rem;
 }
 #coordinate-error {
-  font-size: 8px;
+  font-size: 0.75rem;
   line-height: 1.6;
   color: #ebaaaa;
   min-height: 16px;
@@ -1201,7 +1201,7 @@
   justify-content: space-between;
   gap: 15px;
   padding: 0 19px;
-  font-size: 7px;
+  font-size: 0.75rem;
   color: #919198;
 }
 .dashboard-status > span {
@@ -1231,7 +1231,7 @@
   color: #080808;
   border-radius: 7px;
   padding: 13px 19px;
-  font-size: 11px;
+  font-size: 0.875rem;
   max-width: 600px;
   opacity: 0;
   pointer-events: none;
@@ -1248,7 +1248,7 @@
   max-width: 760px;
 }
 #dashboard-dialog .dialog-toolbar {
-  font-size: 12px;
+  font-size: 0.875rem;
 }
 #dashboard-dialog .dialog-content h2 {
   font-size: 35px;
@@ -1260,130 +1260,130 @@
   background: #000c;
 }
 .sidebar h2 {
-  font-size: 11px;
+  font-size: 0.875rem;
 }
 .workspace-nav a {
-  font-size: 12px;
+  font-size: 0.875rem;
 }
 .layer-option > span:not(.radio-indicator) {
-  font-size: 12px;
+  font-size: 0.875rem;
 }
 .layer-option small {
-  font-size: 9px;
+  font-size: 0.75rem;
 }
 .overlays > label {
-  font-size: 11px;
+  font-size: 0.875rem;
 }
 .sidebar-empty {
-  font-size: 11px;
+  font-size: 0.875rem;
 }
 .dataset-mark {
-  font-size: 10px;
+  font-size: 0.8125rem;
 }
 .dataset-mark > div > span {
-  font-size: 9px;
+  font-size: 0.75rem;
 }
 .return-home {
-  font-size: 11px;
+  font-size: 0.875rem;
 }
 .sidebar-bottom {
   padding-left: 16px;
   padding-right: 16px;
 }
 .workspace-breadcrumb {
-  font-size: 10px;
+  font-size: 0.8125rem;
 }
 .export-button,
 .subtle-button {
-  font-size: 11px;
+  font-size: 0.875rem;
 }
 .view-tabs button {
-  font-size: 11px;
+  font-size: 0.875rem;
 }
 .region-select select,
 .date-control input {
-  font-size: 10px;
+  font-size: 0.8125rem;
 }
 .date-control input {
   width: 130px;
 }
 .inspector-heading h2,
 .location-identity > p {
-  font-size: 11px;
+  font-size: 0.875rem;
 }
 .location-identity h3 {
   font-size: 18px;
 }
 .location-identity > span {
-  font-size: 9px;
+  font-size: 0.75rem;
 }
 .selected-value > span:first-child {
-  font-size: 10px;
+  font-size: 0.8125rem;
 }
 .selected-value-description {
-  font-size: 9px;
+  font-size: 0.75rem;
 }
 .inspector-tabs button {
-  font-size: 10px;
+  font-size: 0.8125rem;
 }
 .profile-legend {
-  font-size: 9px;
+  font-size: 0.75rem;
 }
 .chart-context {
-  font-size: 9px;
+  font-size: 0.75rem;
 }
 .surface-conditions h3,
 .coordinate-form h3 {
-  font-size: 11px;
+  font-size: 0.875rem;
 }
 .surface-conditions dt,
 .coordinate-form label {
-  font-size: 10px;
+  font-size: 0.8125rem;
 }
 .surface-conditions dd {
-  font-size: 13px;
+  font-size: 0.9375rem;
 }
 .coordinate-form input {
-  font-size: 11px;
+  font-size: 0.875rem;
 }
 #coordinate-error {
-  font-size: 10px;
+  font-size: 0.8125rem;
 }
 .coordinate-form {
   padding-bottom: 8px;
 }
 .depth-mode-note {
-  font-size: 9px;
+  font-size: 0.75rem;
 }
 .depth-ticks button {
-  font-size: 9px;
+  font-size: 0.75rem;
 }
 .region-summary > small {
-  font-size: 9px;
+  font-size: 0.75rem;
 }
 .region-summary > span {
-  font-size: 11px;
+  font-size: 0.875rem;
 }
 .observations-heading h2 {
-  font-size: 12px;
+  font-size: 0.875rem;
 }
 .observations-heading > span {
-  font-size: 10px;
+  font-size: 0.8125rem;
 }
 .dashboard-status {
-  font-size: 9px;
+  font-size: 0.75rem;
 }
 .map-attribution {
-  font-size: 8px;
+  font-size: 0.75rem;
 }
 .map-legend > div:first-child {
-  font-size: 10px;
+  font-size: 0.8125rem;
 }
 .legend-ticks {
-  font-size: 9px;
+  font-size: 0.75rem;
 }
 .map-coordinates {
-  font-size: 9px;
+  font-size: 0.75rem;
 }
 .map-panel.section-view .map-resolution {
   display: block;
@@ -1400,16 +1400,16 @@
     padding-right: 30px;
   }
   .layer-option small {
-    font-size: 9px;
+    font-size: 0.75rem;
   }
   .layer-option > span:not(.radio-indicator) {
-    font-size: 12px;
+    font-size: 0.875rem;
   }
   .sidebar h2 {
-    font-size: 11px;
+    font-size: 0.875rem;
   }
   .workspace-nav a {
-    font-size: 12px;
+    font-size: 0.875rem;
   }
   .location-inspector {
     padding-left: 26px;
@@ -1420,7 +1420,7 @@
     padding-bottom: 27px;
   }
   .overlays > label {
-    font-size: 11px;
+    font-size: 0.875rem;
   }
   .map-panel {
     min-height: 330px;
@@ -1435,10 +1435,10 @@
     font-size: 27px;
   }
   .region-summary > span {
-    font-size: 11px;
+    font-size: 0.875rem;
   }
   .region-summary > small {
-    font-size: 9px;
+    font-size: 0.75rem;
   }
   .profile-section {
     padding-top: 20px;
@@ -1453,24 +1453,24 @@
     height: 62px;
   }
   .view-tabs button {
-    font-size: 12px;
+    font-size: 0.875rem;
   }
   .region-select select,
   .date-control input {
-    font-size: 11px;
+    font-size: 0.875rem;
   }
   .date-control input {
     width: 142px;
   }
   .dashboard-status {
-    font-size: 9px;
+    font-size: 0.75rem;
   }
   .map-header > div {
-    font-size: 12px;
+    font-size: 0.875rem;
   }
   .map-unit,
   .map-resolution {
-    font-size: 10px;
+    font-size: 0.8125rem;
   }
 }
 @media (max-height: 800px) {
@@ -1517,5 +1517,116 @@
   }
   .selected-value {
     padding-bottom: 15px;
+  }
+}
+
+/* Larger type gets room rather than being compressed back into the old grid. */
+.dashboard-app {
+  grid-template-columns: 240px minmax(0, 1fr);
+  min-width: 1200px;
+}
+.workspace-body {
+  grid-template-columns: minmax(0, 1fr) 320px;
+}
+.layer-option {
+  min-height: 60px;
+}
+.workspace-nav a {
+  gap: 9px;
+}
+.workspace-nav {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.dataset-mark {
+  line-height: 1.7;
+}
+.date-control input {
+  width: 155px;
+}
+.profile-legend {
+  gap: 12px;
+  flex-wrap: wrap;
+  line-height: 1.6;
+}
+.surface-conditions dt {
+  line-height: 1.6;
+}
+.map-legend {
+  width: 265px;
+}
+.map-header {
+  align-items: flex-start;
+  gap: 12px;
+}
+.map-header > div {
+  flex-wrap: wrap;
+  gap: 5px 10px;
+}
+.map-header > div .map-unit {
+  border-left: 0;
+  padding-left: 0;
+}
+.map-resolution {
+  white-space: nowrap;
+}
+.map-coordinates {
+  bottom: 10px;
+}
+.dashboard-status {
+  gap: 16px;
+  min-height: 34px;
+  height: auto;
+  flex-wrap: wrap;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+.region-summary {
+  height: 110px;
+  padding: 13px 15px;
+}
+.region-summary > span {
+  white-space: normal;
+  line-height: 1.5;
+}
+.region-summary > small {
+  max-width: 65%;
+  line-height: 1.6;
+}
+.observations-panel {
+  height: 170px;
+}
+.depth-strip {
+  height: 114px;
+}
+@media (min-width: 1600px) {
+  .dashboard-app {
+    grid-template-columns: 250px minmax(0, 1fr);
+  }
+  .workspace-body {
+    grid-template-columns: minmax(0, 1fr) 340px;
+  }
+  .date-control input {
+    width: 160px;
+  }
+}
+@media (max-height: 800px) {
+  .observations-panel {
+    height: 160px;
+  }
+  .region-summary {
+    height: 100px;
+  }
+  .depth-strip {
+    height: 110px;
+  }
+  .layer-option {
+    min-height: 58px;
+  }
+  .workspace-toolbar {
+    height: 56px;
+  }
+  .dashboard-app {
+    min-height: 780px;
   }
 }

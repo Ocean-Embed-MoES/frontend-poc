@@ -222,7 +222,7 @@ export function createAssembly({ canvas, container, reduced, onSelect }) {
       projection.project(camera);
       const x = (projection.x * 0.5 + 0.5) * width,
         y = (-projection.y * 0.5 + 0.5) * height;
-      const lx = compact ? width - 125 : width - 190;
+      const lx = compact ? width - 150 : width - 230;
       const ly = compact
         ? 80 + (i * (height - 170)) / 5
         : 77 + (i * (height - 165)) / 5;

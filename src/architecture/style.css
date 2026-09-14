@@ -13,7 +13,7 @@
 .architecture-header nav {
   display: flex;
   gap: 34px;
-  font-size: 12px;
+  font-size: 1rem;
   color: #96969b;
 }
 .architecture-header nav a {
@@ -27,7 +27,7 @@
   color: #fff;
 }
 .architecture-header .header-link {
-  font-size: 12px;
+  font-size: 1rem;
 }
 .architecture-shell {
   padding: 115px var(--gutter);
@@ -62,7 +62,7 @@
   color: #858589;
 }
 .assembly-copy > p {
-  font-size: 14px;
+  font-size: 1rem;
   line-height: 1.9;
   color: #a0a0a6;
   margin: 30px 0;
@@ -72,7 +72,7 @@
   align-items: center;
   gap: 26px;
   min-height: 44px;
-  font-size: 12px;
+  font-size: 1rem;
   font-weight: 550;
   background: none;
   border: 0;
@@ -93,7 +93,7 @@
   align-items: flex-start;
   gap: 15px;
   color: #99999e;
-  font-size: 10px;
+  font-size: 0.75rem;
   line-height: 1.8;
 }
 .note-line {
@@ -160,19 +160,19 @@
   outline-offset: 4px;
 }
 .assembly-label .label-index {
-  font-size: 9px;
+  font-size: 0.75rem;
   line-height: 18px;
   color: #84848b;
   font-variant-numeric: tabular-nums;
 }
 .assembly-label strong {
-  font-size: 11px;
+  font-size: 0.875rem;
   line-height: 1.7;
   font-weight: 500;
   display: block;
 }
 .assembly-label small {
-  font-size: 10px;
+  font-size: 0.75rem;
   line-height: 1.7;
   display: block;
   color: #8d8d94;
@@ -212,7 +212,7 @@
   border-radius: 100px;
   padding: 9px 16px;
   color: #95959b;
-  font-size: 10px;
+  font-size: 0.75rem;
   transition:
     background 0.2s,
     color 0.2s;
@@ -246,7 +246,7 @@
   width: 55%;
   display: flex;
   justify-content: space-between;
-  font-size: 9px;
+  font-size: 0.75rem;
   color: #939399;
 }
 .assembly-caption > span {
@@ -262,7 +262,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 23px 0;
-  font-size: 10px;
+  font-size: 0.75rem;
   color: #a0a0a5;
 }
 .hero-bottom-rule > a {
@@ -296,7 +296,7 @@
 }
 .section-intro > p {
   max-width: 340px;
-  font-size: 13px;
+  font-size: 1rem;
   line-height: 1.9;
   color: #a3a3a8;
   margin: 0 0 3px;
@@ -310,11 +310,11 @@
   justify-content: space-between;
   align-items: center;
   padding: 22px 0;
-  font-size: 12px;
+  font-size: 1rem;
   color: #b0b0b5;
 }
 .signal-toolbar .text-action {
-  font-size: 11px;
+  font-size: 0.875rem;
   color: #b0b0b5;
   gap: 15px;
 }
@@ -335,23 +335,23 @@
 #network-diagram text {
   fill: #ababaf;
   font-family: "Manrope Variable", sans-serif;
-  font-size: 11px;
+  font-size: 0.875rem;
 }
 #network-diagram .block-label {
   fill: #e3e3e5;
-  font-size: 12px;
+  font-size: 1rem;
 }
 #network-diagram .block-sub {
-  font-size: 10px;
+  font-size: 0.75rem;
   fill: #99999e;
 }
 #network-diagram .group-label {
-  font-size: 9px;
+  font-size: 0.75rem;
   letter-spacing: 1px;
   fill: #a0a0a5;
 }
 #network-diagram .skip-label {
-  font-size: 10px;
+  font-size: 0.75rem;
   fill: #9b9ba1;
 }
 .flow-paths path {
@@ -425,7 +425,7 @@
   gap: 27px;
   justify-content: center;
   margin: 12px 0 35px;
-  font-size: 9px;
+  font-size: 0.75rem;
   color: #95959b;
 }
 .network-legend > span {
@@ -455,12 +455,12 @@
   color: #929298;
   padding: 22px 8px;
   border: 0;
-  font-size: 12px;
+  font-size: 1rem;
   text-align: left;
   transition: color 0.2s;
 }
 .stage-tabs button > span {
-  font-size: 9px;
+  font-size: 0.75rem;
   margin-right: 13px;
   color: #909097;
   font-variant-numeric: tabular-nums;
@@ -493,7 +493,7 @@
   margin: 0 0 17px;
 }
 .stage-story p {
-  font-size: 12px;
+  font-size: 1rem;
   color: #a0a0a7;
   line-height: 1.9;
   max-width: 610px;
@@ -512,11 +512,11 @@
   gap: 7px;
 }
 .stage-spec dt {
-  font-size: 10px;
+  font-size: 0.75rem;
   color: #99999f;
 }
 .stage-spec dd {
-  font-size: 12px;
+  font-size: 1rem;
   margin: 0;
   color: #e4e4e7;
   font-variant-numeric: tabular-nums;
@@ -534,7 +534,7 @@
   top: 75px;
 }
 .features-heading > p {
-  font-size: 13px;
+  font-size: 1rem;
   color: #a0a0a6;
   line-height: 1.9;
   max-width: 335px;
@@ -554,12 +554,12 @@
   font-variant-numeric: tabular-nums;
 }
 .feature-count > span:last-child {
-  font-size: 11px;
+  font-size: 0.875rem;
   color: #a2a2a8;
   line-height: 1.9;
 }
 .features-heading .feature-processing {
-  font-size: 10px;
+  font-size: 0.75rem;
   margin-top: 38px;
   display: flex;
   align-items: center;
@@ -576,7 +576,7 @@
   padding: 14px 0 21px;
   background: transparent;
   border: 0;
-  font-size: 11px;
+  font-size: 0.875rem;
   color: #9d9da4;
   min-height: 44px;
 }
@@ -612,28 +612,28 @@
 }
 .feature-symbol {
   width: 49px;
-  font-size: 13px;
+  font-size: 1rem;
   font-weight: 600;
   flex-shrink: 0;
 }
 .feature-name {
   flex: 1;
-  font-size: 12px;
+  font-size: 1rem;
   color: #dedee1;
 }
 .feature-name small {
   display: block;
-  font-size: 9px;
+  font-size: 0.75rem;
   color: #99999f;
   margin-top: 5px;
 }
 .feature-number {
-  font-size: 9px;
+  font-size: 0.75rem;
   color: #919198;
   font-variant-numeric: tabular-nums;
 }
 .feature-row summary > .ph {
-  font-size: 13px;
+  font-size: 1rem;
   color: #a2a2a8;
   transition: transform 0.2s;
 }
@@ -641,14 +641,14 @@
   transform: rotate(45deg);
 }
 .feature-row > p {
-  font-size: 12px;
+  font-size: 1rem;
   line-height: 1.9;
   color: #aaaab0;
   padding: 0 25px 21px 69px;
   margin: 0;
 }
 .catalog-note {
-  font-size: 10px;
+  font-size: 0.75rem;
   color: #95959c;
   margin: 20px 0 0;
 }
@@ -675,18 +675,18 @@
   max-width: 425px;
 }
 .training-step > span {
-  font-size: 10px;
+  font-size: 0.75rem;
   color: #9a9aa1;
   padding-top: 4px;
   font-variant-numeric: tabular-nums;
 }
 .training-step h4 {
-  font-size: 13px;
+  font-size: 1rem;
   font-weight: 500;
   margin: 0 0 10px;
 }
 .training-step p {
-  font-size: 12px;
+  font-size: 1rem;
   color: #a0a0a7;
   line-height: 1.9;
   margin: 0;
@@ -698,7 +698,7 @@
   border-top: 1px solid #303034;
   padding-top: 23px;
   margin-top: 30px;
-  font-size: 12px;
+  font-size: 1rem;
   color: #aaaab1;
   max-width: 425px;
   line-height: 1.9;
@@ -718,7 +718,7 @@
   gap: 8px;
 }
 .loss-heading > span {
-  font-size: 10px;
+  font-size: 0.75rem;
   color: #99999f;
 }
 .loss-chart {
@@ -729,7 +729,7 @@
 .loss-axis {
   position: relative;
   width: 22px;
-  font-size: 9px;
+  font-size: 0.75rem;
   color: #a0a0a6;
   border-right: 1px solid #48484c;
 }
@@ -762,13 +762,13 @@
   color: #aaaab0;
   background: #080809;
   min-height: 66px;
-  font-size: 11px;
+  font-size: 0.875rem;
   transition:
     background 0.25s,
     color 0.25s;
 }
 .loss-zones button > span:nth-child(2) {
-  font-size: 10px;
+  font-size: 0.75rem;
 }
 .loss-zones button > strong {
   font-size: 18px;
@@ -784,7 +784,7 @@
   border-color: #999;
 }
 #zone-explanation {
-  font-size: 11px;
+  font-size: 0.875rem;
   line-height: 1.9;
   color: #a0a0a7;
   margin: 24px 0;
@@ -796,10 +796,10 @@
   align-items: center;
   border-top: 1px solid #303034;
   padding-top: 19px;
-  font-size: 15px;
+  font-size: 0.9375rem;
 }
 .loss-formula > span:last-child {
-  font-size: 10px;
+  font-size: 0.75rem;
   color: #99999f;
 }
 .evaluation-row {
@@ -813,23 +813,23 @@
   align-items: center;
 }
 .evaluation-row h3 {
-  font-size: 13px;
+  font-size: 1rem;
   font-weight: 500;
 }
 .evaluation-row p {
-  font-size: 14px;
+  font-size: 1rem;
 }
 .evaluation-row p span {
   color: #707077;
   padding: 0 12px;
 }
 .evaluation-row > span {
-  font-size: 10px;
+  font-size: 0.75rem;
   color: #a0a0a7;
 }
 .architecture-provenance {
   color: #96969d;
-  font-size: 10px;
+  font-size: 0.75rem;
   line-height: 1.9;
   margin-top: 22px;
   max-width: 810px;
@@ -853,7 +853,7 @@
   gap: 15px;
   align-items: center;
   margin-bottom: 7px;
-  font-size: 12px;
+  font-size: 1rem;
   line-height: 1.6;
 }
 .spec-link > i {
@@ -862,7 +862,7 @@
 .spec-link > span > span {
   display: block;
   color: #99999f;
-  font-size: 10px;
+  font-size: 0.75rem;
   margin-top: 4px;
 }
 .architecture-close .site-footer {
@@ -907,11 +907,11 @@
   transform: skewY(-15deg);
   padding: 15px;
   text-align: center;
-  font-size: 12px;
+  font-size: 1rem;
   background: #090909;
 }
 .assembly-fallback > p {
-  font-size: 11px;
+  font-size: 0.875rem;
   color: #aaa;
   line-height: 1.8;
   margin-top: 30px;
@@ -924,16 +924,16 @@
     width: 61%;
   }
   .assembly-label strong {
-    font-size: 12px;
+    font-size: 1rem;
   }
   .assembly-label small {
-    font-size: 11px;
+    font-size: 0.875rem;
   }
   .assembly-copy > p {
-    font-size: 15px;
+    font-size: 0.9375rem;
   }
   .assembly-note {
-    font-size: 11px;
+    font-size: 0.875rem;
   }
 }
 @media (max-width: 1200px) {
@@ -949,7 +949,7 @@
   }
   .assembly-copy > p {
     max-width: 310px;
-    font-size: 13px;
+    font-size: 1rem;
   }
   .assembly-note {
     max-width: 280px;
@@ -1045,7 +1045,7 @@
     margin-top: 23px;
   }
   .stage-tabs button {
-    font-size: 11px;
+    font-size: 0.875rem;
   }
   .stage-tabs button > span {
     display: block;
@@ -1065,7 +1065,7 @@
   }
   .loss-zones button {
     padding: 13px 10px;
-    font-size: 10px;
+    font-size: 0.75rem;
     grid-template-columns: 1fr 40px;
   }
   .loss-zones button > span:nth-child(2) {
@@ -1094,7 +1094,7 @@
   }
   .architecture-header nav {
     gap: 17px;
-    font-size: 10px;
+    font-size: 0.75rem;
   }
   .architecture-header .brand-symbol {
     display: none;
@@ -1111,11 +1111,11 @@
     display: block;
   }
   .assembly-copy > p {
-    font-size: 12px;
+    font-size: 1rem;
     margin: 22px 0 15px;
   }
   .assembly-copy .text-action {
-    font-size: 11px;
+    font-size: 0.875rem;
   }
   .assembly-hero {
     min-height: 1055px;
@@ -1132,14 +1132,14 @@
     padding: 3px 0;
   }
   .assembly-label .label-index {
-    font-size: 8px;
+    font-size: 0.75rem;
   }
   .assembly-label strong {
-    font-size: 9px;
+    font-size: 0.75rem;
     line-height: 1.6;
   }
   .assembly-label small {
-    font-size: 8px;
+    font-size: 0.75rem;
   }
   .assembly-controls {
     left: 50%;
@@ -1147,22 +1147,22 @@
     bottom: -22px;
   }
   .view-toggle button {
-    font-size: 9px;
+    font-size: 0.75rem;
     padding: 8px 12px;
   }
   .subtle-icon {
     width: 30px;
     height: 30px;
-    font-size: 14px;
+    font-size: 1rem;
   }
   .assembly-caption {
     left: 15%;
     width: 70%;
     bottom: -50px;
-    font-size: 8px;
+    font-size: 0.75rem;
   }
   .hero-bottom-rule {
-    font-size: 8px;
+    font-size: 0.75rem;
     padding: 17px 0;
     gap: 16px;
   }
@@ -1185,20 +1185,20 @@
     letter-spacing: -0.045em;
   }
   .section-intro > p {
-    font-size: 12px;
+    font-size: 1rem;
     line-height: 1.9;
   }
   .signal-toolbar {
     padding: 15px 0;
-    font-size: 11px;
+    font-size: 0.875rem;
   }
   .signal-toolbar .text-action {
-    font-size: 10px;
+    font-size: 0.75rem;
   }
   .network-legend {
     justify-content: flex-start;
     gap: 17px;
-    font-size: 8px;
+    font-size: 0.75rem;
     margin: 13px 0 24px;
   }
   .network-legend > span:last-child {
@@ -1209,7 +1209,7 @@
   }
   .stage-tabs button {
     padding: 14px 4px;
-    font-size: 11px;
+    font-size: 0.875rem;
   }
   .stage-tabs button > span {
     display: inline;
@@ -1225,20 +1225,20 @@
     line-height: 1.4;
   }
   .stage-story p {
-    font-size: 11px;
+    font-size: 0.875rem;
   }
   .stage-spec {
     flex-direction: column;
     gap: 18px;
   }
   .stage-spec dd {
-    font-size: 11px;
+    font-size: 0.875rem;
   }
   .feature-filter {
     gap: 24px;
   }
   .feature-filter button {
-    font-size: 10px;
+    font-size: 0.75rem;
   }
   .feature-row summary {
     gap: 12px;
@@ -1246,14 +1246,14 @@
   }
   .feature-symbol {
     width: 42px;
-    font-size: 12px;
+    font-size: 1rem;
   }
   .feature-name {
-    font-size: 11px;
+    font-size: 0.875rem;
   }
   .feature-row > p {
     padding-left: 54px;
-    font-size: 11px;
+    font-size: 0.875rem;
   }
   .features-section {
     gap: 30px;
@@ -1272,7 +1272,7 @@
   .loss-zones button {
     grid-template-columns: 1fr 1fr 44px;
     padding: 18px 14px;
-    font-size: 11px;
+    font-size: 0.875rem;
   }
   .loss-zones button > span:nth-child(2) {
     display: block;
@@ -1286,13 +1286,13 @@
     width: 100%;
   }
   .evaluation-row p {
-    font-size: 13px;
+    font-size: 1rem;
   }
   .evaluation-row > span {
-    font-size: 9px;
+    font-size: 0.75rem;
   }
   .architecture-provenance {
-    font-size: 9px;
+    font-size: 0.75rem;
   }
   .architecture-close h2 {
     font-size: 34px;
@@ -1316,7 +1316,7 @@
   }
   .fallback-stack > span {
     padding: 12px 5px;
-    font-size: 10px;
+    font-size: 0.75rem;
   }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -1326,5 +1326,133 @@
     transition: none !important;
     animation: none !important;
     scroll-behavior: auto !important;
+  }
+}
+
+/* Supporting copy should remain readable at every breakpoint. */
+.section-intro > p {
+  max-width: 390px;
+}
+.assembly-label {
+  width: 230px;
+  min-height: 60px;
+}
+.assembly-caption {
+  width: 64%;
+  left: 5%;
+}
+.stage-detail {
+  min-height: 265px;
+  gap: 60px;
+}
+.stage-story p {
+  max-width: 65ch;
+  line-height: 1.8;
+}
+.feature-row summary {
+  min-height: 84px;
+}
+.feature-row > p {
+  line-height: 1.8;
+}
+.training-step p {
+  line-height: 1.8;
+}
+#zone-explanation {
+  min-height: 90px;
+  line-height: 1.8;
+}
+.evaluation-row {
+  flex-wrap: wrap;
+}
+.network-legend {
+  flex-wrap: wrap;
+}
+#network-diagram {
+  min-width: 1100px;
+}
+@media (max-width: 900px) {
+  .section-intro > p {
+    max-width: 65ch;
+  }
+  .stage-detail {
+    min-height: 355px;
+  }
+  .assembly-study {
+    top: 400px;
+  }
+  .assembly-hero {
+    min-height: 1160px;
+  }
+}
+@media (max-width: 600px) {
+  .assembly-label {
+    width: 150px;
+    gap: 5px;
+  }
+  .assembly-label strong {
+    font-size: 0.8125rem;
+    line-height: 1.5;
+  }
+  .assembly-label .label-index {
+    display: none;
+  }
+  .assembly-caption {
+    width: 88%;
+    left: 6%;
+  }
+  .assembly-study {
+    top: 445px;
+    height: 590px;
+  }
+  .assembly-hero {
+    min-height: 1165px;
+  }
+  .assembly-copy > p {
+    max-width: 32ch;
+  }
+  .assembly-controls {
+    bottom: -32px;
+  }
+  .assembly-caption {
+    bottom: -65px;
+  }
+  .stage-detail {
+    min-height: 455px;
+  }
+  .stage-tabs button {
+    font-size: 0.875rem;
+  }
+  .stage-tabs button > span {
+    display: none;
+  }
+  .feature-filter {
+    gap: 20px;
+  }
+  .feature-name {
+    font-size: 0.9375rem;
+  }
+  .feature-row > p,
+  .stage-story p,
+  .section-intro > p,
+  .features-heading > p {
+    font-size: 1rem;
+  }
+  .loss-zones button {
+    grid-template-columns: 1fr 80px 44px;
+    padding: 17px 10px;
+    gap: 8px;
+  }
+  .loss-zones button > span:first-child {
+    font-size: 0.875rem;
+  }
+  .loss-formula {
+    gap: 20px;
+  }
+  .hero-bottom-rule > span:nth-child(2) {
+    max-width: 150px;
+  }
+  .scene-failed .assembly-labels {
+    width: 150px;
   }
 }

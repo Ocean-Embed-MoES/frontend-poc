@@ -18,6 +18,8 @@ let model = null,
   paused = false,
   active = 3;
 let destroyed = false;
+let traceVisible = false,
+  tracePaused = false;
 const study = $("#assembly-study");
 $(".assembly-labels").innerHTML = stages
   .map(
@@ -117,9 +119,9 @@ function syncPause() {
   button.title = paused ? "Resume motion" : "Pause motion";
   button.innerHTML = `<i class="ph ph-${paused ? "play" : "pause"}" aria-hidden="true"></i>`;
   if (paused || reduced.matches) {
-    trace?.progress(1);
     model?.settle();
   }
+  syncTrace();
 }
 $("#pause-motion").addEventListener("click", () => {
   paused = !paused;
@@ -156,21 +158,18 @@ all("[data-zone]").forEach((button) =>
     $("#zone-explanation").textContent = zones[button.dataset.zone];
   }),
 );
-function replay(instant = false) {
+function createTrace() {
   trace?.kill();
   const paths = all(".trace-paths path");
   gsap.set(paths, { strokeDasharray: 1, strokeDashoffset: 1, opacity: 1 });
-  if (reduced.matches || instant) {
+  if (reduced.matches) {
+    trace = null;
     gsap.set(paths, { strokeDashoffset: 0, opacity: 0.7 });
+    syncTrace();
     return;
   }
-  trace = gsap.timeline({
-    onComplete() {
-      gsap.to(paths, { opacity: 0, duration: 0.6 });
-      $("#signal-replay").innerHTML =
-        'Trace again <i class="ph ph-play" aria-hidden="true"></i>';
-    },
-  });
+  trace = gsap.timeline({ repeat: -1, repeatDelay: 0.6, paused: true });
+  trace.set(paths, { strokeDashoffset: 1, opacity: 1 });
   paths.forEach((path, i) =>
     trace.to(
       path,
@@ -178,10 +177,33 @@ function replay(instant = false) {
       i * 0.19,
     ),
   );
+  trace.to(paths, { opacity: 0, duration: 0.6 }, "+=0.35");
+  syncTrace();
 }
-$("#signal-replay").addEventListener("click", (event) =>
-  replay(event.detail === 0),
-);
+function syncTrace() {
+  const stopped = paused || tracePaused || reduced.matches;
+  trace?.paused(stopped || !traceVisible || document.hidden);
+  const button = $("#signal-replay");
+  button.disabled = reduced.matches;
+  button.setAttribute("aria-pressed", String(stopped));
+  button.innerHTML = reduced.matches
+    ? "Signal flow"
+    : `${stopped ? "Resume" : "Pause"} signal <i class="ph ph-${stopped ? "play" : "pause"}" aria-hidden="true"></i>`;
+}
+$("#signal-replay").addEventListener("click", () => {
+  if (paused) {
+    paused = false;
+    tracePaused = false;
+    syncPause();
+  } else tracePaused = !tracePaused;
+  syncTrace();
+});
+const traceObserver = new IntersectionObserver(([entry]) => {
+  traceVisible = entry.isIntersecting;
+  syncTrace();
+});
+traceObserver.observe($(".network-scroll"));
+document.addEventListener("visibilitychange", syncTrace);
 function setupMotion() {
   motion?.revert();
   lenis?.destroy();
@@ -230,14 +252,6 @@ function setupMotion() {
         once: true,
       },
     });
-    ScrollTrigger.create({
-      trigger: ".network-scroll",
-      start: "top 65%",
-      once: true,
-      onEnter: () => {
-        if (!paused) replay();
-      },
-    });
     gsap.from(".loss-zones button", {
       x: 22,
       opacity: 0,
@@ -249,8 +263,10 @@ function setupMotion() {
   });
 }
 setupMotion();
+createTrace();
 function preferenceChanged() {
   setupMotion();
+  createTrace();
   syncPause();
 }
 reduced.addEventListener("change", preferenceChanged);
@@ -308,6 +324,8 @@ window.addEventListener(
     destroyed = true;
     model?.dispose();
     trace?.kill();
+    traceObserver.disconnect();
+    document.removeEventListener("visibilitychange", syncTrace);
     motion?.revert();
     lenis?.destroy();
     gsap.ticker.remove(tick);

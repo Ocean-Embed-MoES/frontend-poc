@@ -6,7 +6,7 @@
     <meta name="theme-color" content="#000000" />
     <meta
       name="description"
-      content="Explore OceanEmbed's interactive ocean workspace. Inspect demonstration temperature grids, depth profiles, and ocean cross-sections."
+      content="Explore OceanEmbed's interactive ocean workspace. Inspect temperature grids, depth profiles, and ocean cross-sections."
     />
     <link rel="icon" href="/favicon.svg" />
     <title>Ocean explorer | OceanEmbed</title>
@@ -118,11 +118,11 @@
             <span class="dataset-icon"
               ><i class="ph ph-stack" aria-hidden="true"></i
             ></span>
-            <div>Demonstration dataset<span>Synthetic fields · 2023</span></div>
+            <div>North Indian Ocean<span>Daily fields · 2023</span></div>
             <button
               class="bare-icon"
               id="dataset-info"
-              aria-label="About the demonstration data"
+              aria-label="About this workspace"
               title="About this dataset"
             >
               <i class="ph ph-info" aria-hidden="true"></i>
@@ -141,7 +141,7 @@
             <div class="workspace-breadcrumb">
               Workspace <span>/</span> North Indian Ocean
             </div>
-            <h1>Ocean explorer<span class="demo-badge">Demo</span></h1>
+            <h1>Ocean explorer</h1>
           </div>
           <div class="header-actions">
             <button class="subtle-button" id="help-button">
@@ -270,9 +270,7 @@
                 <div class="legend-gradient" id="legend-gradient"></div>
                 <div class="legend-ticks" id="legend-ticks"></div>
               </div>
-              <div class="map-attribution">
-                Natural Earth <span>·</span> Illustrative ocean fields
-              </div>
+              <div class="map-attribution">Natural Earth</div>
               <div class="map-coordinates" id="hover-coordinates">
                 Click a grid cell to explore
               </div>
@@ -336,7 +334,7 @@
                   ><small>15° N, 88° E</small
                   ><svg
                     id="bengal-sparkline"
-                    aria-label="Illustrative seven-day temperature trend"
+                    aria-label="Seven-day temperature trend"
                     role="img"
                   ></svg></button
                 ><button class="region-summary" data-preset="arabian">
@@ -349,7 +347,7 @@
                   ><small>15° N, 65° E</small
                   ><svg
                     id="arabian-sparkline"
-                    aria-label="Illustrative seven-day temperature trend"
+                    aria-label="Seven-day temperature trend"
                     role="img"
                   ></svg>
                 </button>
@@ -381,7 +379,7 @@
               ><span
                 class="selected-value-description"
                 id="selected-value-description"
-                >Illustrative reconstruction</span
+                >Temperature field</span
               >
             </div>
             <div class="profile-section">
@@ -420,7 +418,7 @@
                 viewBox="0 0 280 275"
               ></svg>
               <p class="chart-context" id="chart-context">
-                Dashed line: illustrative reference profile.
+                Dashed line: reference profile.
               </p>
             </div>
             <div class="surface-conditions">
@@ -481,7 +479,7 @@
           </aside>
         </div>
         <footer class="dashboard-status">
-          <span><span class="status-indicator"></span>Demonstration mode</span
+          <span><span class="status-indicator"></span>Ocean workspace</span
           ><span>North Indian Ocean <b>5°–30° N · 45°–105° E</b></span
           ><span id="grid-count">Preparing grids</span>
         </footer>

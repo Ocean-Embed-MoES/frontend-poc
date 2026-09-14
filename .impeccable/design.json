@@ -361,7 +361,16 @@
         "name": "architecture-mobile",
         "value": "600px"
       }
-    ]
+    ],
+    "readabilityRefinement": {
+      "body": "16px",
+      "labels": "13\u201316px",
+      "metadata": "12\u201314px",
+      "units": "rem for supporting text",
+      "earth": "Natural color, drag and keyboard rotation, rotate/reset controls",
+      "signal": "Continuous while visible; pause/resume and reduced-motion support",
+      "dashboardZoom": "Cursor-anchored wheel and trackpad zoom, normalized delta units, pointer pinch"
+    }
   },
   "components": [
     {

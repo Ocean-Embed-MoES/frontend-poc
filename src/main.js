@@ -89,6 +89,11 @@ initPreviews({onOpen(){modalOpen=true;lenis?.stop();updatePlayback();},onClose()
 
 import('./scenes').then(async({createScenes})=>{
   scenes=await createScenes();
+  if(scenes.earth){
+    document.querySelector('.earth-controls').hidden=false;
+    document.querySelector('#earth-rotate').addEventListener('click',()=>scenes.earth.rotate());
+    document.querySelector('#earth-reset').addEventListener('click',()=>scenes.earth.reset());
+  }
   scenes.depth?.select(Number(slider.value));
   document.documentElement.dataset.scenes='ready';
 }).catch(()=>{

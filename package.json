@@ -20,7 +20,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview --host 0.0.0.0",
-    "test": "node --test src/dashboard/data.test.js",
+    "test": "node --test src/dashboard/*.test.js",
     "format": "prettier --write dashboard/index.html architecture/index.html \"src/dashboard/**/*.{js,css}\" \"src/architecture/**/*.{js,css}\" vite.config.js package.json",
     "format:check": "prettier --check dashboard/index.html architecture/index.html \"src/dashboard/**/*.{js,css}\" \"src/architecture/**/*.{js,css}\" vite.config.js package.json"
   }

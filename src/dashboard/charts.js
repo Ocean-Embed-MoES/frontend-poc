@@ -9,7 +9,7 @@ export function renderProfile(svg, state) {
   const selected = points[state.depthIndex];
   svg.setAttribute(
     "aria-label",
-    `Illustrative temperature profile at ${state.lat} north, ${state.lon} east. ${selected.value.toFixed(2)} degrees at ${selected.depth} metres.`,
+    `Temperature profile at ${state.lat} north, ${state.lon} east. ${selected.value.toFixed(2)} degrees at ${selected.depth} metres.`,
   );
   svg.innerHTML = `<text x="5" y="12" class="axis-title">Depth (m)</text>${[0, 200, 500, 700, 1000].map((d) => `<line x1="40" x2="261" y1="${y(d)}" y2="${y(d)}" class="chart-grid"/><text x="31" y="${y(d) + 3}" text-anchor="end">${d.toLocaleString()}</text>`).join("")}${[0, 10, 20, 30].map((t) => `<text x="${x(t)}" y="253" text-anchor="middle">${t}</text>`).join("")}<text x="151" y="273" text-anchor="middle" class="axis-title">Temperature (°C)</text><polyline points="${path("reference")}" class="reference-line"/><polyline points="${path("value")}" class="profile-line"/><line x1="40" x2="261" y1="${y(selected.depth)}" y2="${y(selected.depth)}" class="selection-rule"/><circle cx="${x(selected.value)}" cy="${y(selected.depth)}" r="4" class="profile-point"/>`;
 }
@@ -31,7 +31,7 @@ export function renderHistory(svg, state) {
     y = (v) => 231 - ((v - low) / (high - low)) * 206;
   svg.setAttribute(
     "aria-label",
-    `Illustrative temperature history for the selected point and depth. ${points.length} available daily samples ending on ${state.date}.`,
+    `Temperature history for the selected point and depth. ${points.length} available daily samples ending on ${state.date}.`,
   );
   svg.innerHTML = `<text x="5" y="12" class="axis-title">Temperature (°C)</text>${[
     0, 0.25, 0.5, 0.75, 1,
